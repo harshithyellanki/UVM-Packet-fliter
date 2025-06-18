@@ -116,29 +116,28 @@ These were explored as design enhancements and are documented in `extra_credit/e
 
 ## Directory Structure
 
-```
 
+
+```bash
 ├── part1
-│   ├── \*.sv / \*.svh         # UVM testbench and source files
-│   ├── Makefile             # Testbench run automation
-│   ├── sources.txt
-│   └── part1.pdf            # Simulation results and coverage screenshots
+│   ├── all testbench files (.sv and .svh)
+|   ├── Makefile
+|   ├── sources.txt
+│   └── part1.pdf
 ├── part2
-│   ├── \*.sv / \*.svh         # Directed debug test integration
-│   ├── Makefile
-│   ├── sources.txt
-│   └── part2.pdf            # Screenshot and explanation
+│   ├── all testbench files (.sv and .svh)
+|   ├── Makefile
+|   ├── sources.txt
+│   └── part2.pdf
 ├── part3
-│   ├── \*.sv / \*.svh         # DUT with checksum logic and testbench
-│   ├── Makefile
-│   ├── sources.txt
-│   └── part3.pdf            # Simulation + synthesis screenshots
-├── extra\_credit
-│   ├── updated DUT/test files
-│   └── extra\_credit.pdf     # Design explanation + instructions
+│   ├── all testbench files (.sv and .svh)
+|   ├── Makefile
+|   ├── sources.txt
+│   └── part3.pdf
+├── extra_credit
+│   ├── all corresponding files (use whatever directories you want)
+│   └── extra_credit.pdf
 └── README.md
-
-```
 
 ---
 
