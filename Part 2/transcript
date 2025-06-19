@@ -1,0 +1,2140 @@
+# vsim -c -debugDB -voptargs="+acc" "+UVM_NO_RELNOTES" "+UVM_VERBOSITY=UVM_MEDIUM" "+UVM_TESTNAME=filter_debug_test" -do "run -all" filter_tb_opt 
+# Start time: 18:31:43 on Apr 15,2025
+# //  Questa Sim-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi4_stream_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.axi4_stream_pkg(fast)
+# Loading work.filter_tb_pkg(fast)
+# Loading work.axi4_stream_pkg_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.filter_tb(fast)
+# Loading work.axi4_stream_if(fast__3)
+# Loading work.filter(fast)
+# Loading work.fifo(fast)
+# Loading /ecel/apps/reconfig/tools/siemens/questasim/2023.3/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# It appears vopt was not run with -debugdb option on this design.
+# Advanced Causality and Schematic debug features will not be available.
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test filter_debug_test...
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               filter_debug_test           -     @479 
+#   env                      filter_env                  -     @486 
+#     agent_in               uvm_agent                   -     @493 
+#       driver               uvm_driver #(REQ,RSP)       -     @642 
+#         rsp_port           uvm_analysis_port           -     @657 
+#         seq_item_port      uvm_seq_item_pull_port      -     @649 
+#       monitor              uvm_monitor                 -     @665 
+#         ap                 uvm_analysis_port           -     @672 
+#       sequencer            uvm_sequencer               -     @533 
+#         rsp_export         uvm_analysis_export         -     @540 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @634 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     agent_out              uvm_agent                   -     @500 
+#       driver               uvm_driver #(REQ,RSP)       -     @795 
+#         rsp_port           uvm_analysis_port           -     @810 
+#         seq_item_port      uvm_seq_item_pull_port      -     @802 
+#       monitor              uvm_monitor                 -     @818 
+#         ap                 uvm_analysis_port           -     @825 
+#       sequencer            uvm_sequencer               -     @686 
+#         rsp_export         uvm_analysis_export         -     @693 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @787 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     input_coverage         filter_input_coverage       -     @514 
+#       in0_fifo             uvm_tlm_analysis_fifo #(T)  -     @846 
+#         analysis_export    uvm_analysis_imp            -     @885 
+#         get_ap             uvm_analysis_port           -     @877 
+#         get_peek_export    uvm_get_peek_imp            -     @861 
+#         put_ap             uvm_analysis_port           -     @869 
+#         put_export         uvm_put_imp                 -     @853 
+#       in_ae                uvm_analysis_export         -     @838 
+#     output_coverage        filter_output_coverage      -     @521 
+#       out_ae               uvm_analysis_export         -     @893 
+#       out_fifo             uvm_tlm_analysis_fifo #(T)  -     @901 
+#         analysis_export    uvm_analysis_imp            -     @940 
+#         get_ap             uvm_analysis_port           -     @932 
+#         get_peek_export    uvm_get_peek_imp            -     @916 
+#         put_ap             uvm_analysis_port           -     @924 
+#         put_export         uvm_put_imp                 -     @908 
+#     scoreboard             filter_scoreboard           -     @507 
+#       in_ae                uvm_analysis_export         -     @948 
+#       in_fifo              uvm_tlm_analysis_fifo #(T)  -     @964 
+#         analysis_export    uvm_analysis_imp            -     @1003
+#         get_ap             uvm_analysis_port           -     @995 
+#         get_peek_export    uvm_get_peek_imp            -     @979 
+#         put_ap             uvm_analysis_port           -     @987 
+#         put_export         uvm_put_imp                 -     @971 
+#       out_ae               uvm_analysis_export         -     @956 
+#       out_fifo             uvm_tlm_analysis_fifo #(T)  -     @1011
+#         analysis_export    uvm_analysis_imp            -     @1050
+#         get_ap             uvm_analysis_port           -     @1042
+#         get_peek_export    uvm_get_peek_imp            -     @1026
+#         put_ap             uvm_analysis_port           -     @1034
+#         put_export         uvm_put_imp                 -     @1018
+# ------------------------------------------------------------------
+# Debug packet: type=5, length=0
+# Debug packet: type=0, length=1
+# Debug packet: type=5, length=2
+# UVM_INFO filter_scoreboard.svh(84) @ 95 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=3
+# UVM_INFO filter_scoreboard.svh(84) @ 135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=4
+# Debug packet: type=10, length=5
+# UVM_INFO filter_scoreboard.svh(84) @ 175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=6
+# UVM_INFO filter_scoreboard.svh(84) @ 215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=7
+# UVM_INFO filter_scoreboard.svh(84) @ 255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=8
+# Debug packet: type=3, length=9
+# UVM_INFO filter_scoreboard.svh(84) @ 395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=10
+# UVM_INFO filter_scoreboard.svh(84) @ 455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=11
+# Debug packet: type=3, length=12
+# UVM_INFO filter_scoreboard.svh(84) @ 585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=13
+# UVM_INFO filter_scoreboard.svh(84) @ 665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=14
+# Debug packet: type=5, length=15
+# UVM_INFO filter_scoreboard.svh(84) @ 795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=16
+# UVM_INFO filter_scoreboard.svh(84) @ 895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=17
+# Debug packet: type=3, length=18
+# UVM_INFO filter_scoreboard.svh(84) @ 1085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=19
+# UVM_INFO filter_scoreboard.svh(84) @ 1225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=20
+# UVM_INFO filter_scoreboard.svh(84) @ 1355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=21
+# UVM_INFO filter_scoreboard.svh(84) @ 1485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=22
+# Debug packet: type=0, length=23
+# UVM_INFO filter_scoreboard.svh(84) @ 1685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=24
+# Debug packet: type=3, length=25
+# UVM_INFO filter_scoreboard.svh(84) @ 1945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=26
+# Debug packet: type=5, length=27
+# UVM_INFO filter_scoreboard.svh(84) @ 2165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=28
+# UVM_INFO filter_scoreboard.svh(84) @ 2365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=29
+# Debug packet: type=3, length=30
+# UVM_INFO filter_scoreboard.svh(84) @ 2655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=31
+# UVM_INFO filter_scoreboard.svh(84) @ 2895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=32
+# Debug packet: type=5, length=33
+# UVM_INFO filter_scoreboard.svh(84) @ 3145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=34
+# UVM_INFO filter_scoreboard.svh(84) @ 3325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=35
+# UVM_INFO filter_scoreboard.svh(84) @ 3625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=36
+# Debug packet: type=0, length=37
+# UVM_INFO filter_scoreboard.svh(84) @ 3875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=38
+# UVM_INFO filter_scoreboard.svh(84) @ 4095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=39
+# UVM_INFO filter_scoreboard.svh(84) @ 4335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=40
+# Debug packet: type=5, length=41
+# UVM_INFO filter_scoreboard.svh(84) @ 4685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=42
+# UVM_INFO filter_scoreboard.svh(84) @ 4975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=43
+# UVM_INFO filter_scoreboard.svh(84) @ 5315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 5655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=44
+# UVM_INFO filter_scoreboard.svh(84) @ 6015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=45
+# UVM_INFO filter_scoreboard.svh(84) @ 6365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=46
+# UVM_INFO filter_scoreboard.svh(84) @ 6755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 7185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=47
+# UVM_INFO filter_scoreboard.svh(84) @ 7475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=48
+# UVM_INFO filter_scoreboard.svh(84) @ 7785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=49
+# UVM_INFO filter_scoreboard.svh(84) @ 8155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 8555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=50
+# UVM_INFO filter_scoreboard.svh(84) @ 9025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=51
+# UVM_INFO filter_scoreboard.svh(84) @ 9445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=52
+# UVM_INFO filter_scoreboard.svh(84) @ 10005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=53
+# UVM_INFO filter_scoreboard.svh(84) @ 10435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=54
+# UVM_INFO filter_scoreboard.svh(84) @ 10885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 11325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=55
+# UVM_INFO filter_scoreboard.svh(84) @ 11795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=56
+# UVM_INFO filter_scoreboard.svh(84) @ 12185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=57
+# UVM_INFO filter_scoreboard.svh(84) @ 12755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=58
+# UVM_INFO filter_scoreboard.svh(84) @ 13165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=59
+# UVM_INFO filter_scoreboard.svh(84) @ 13575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 13985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=60
+# UVM_INFO filter_scoreboard.svh(84) @ 14495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=61
+# UVM_INFO filter_scoreboard.svh(84) @ 15025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=62
+# UVM_INFO filter_scoreboard.svh(84) @ 15505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=63
+# UVM_INFO filter_scoreboard.svh(84) @ 16125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=64
+# UVM_INFO filter_scoreboard.svh(84) @ 16575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=65
+# UVM_INFO filter_scoreboard.svh(84) @ 17165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 17765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=66
+# UVM_INFO filter_scoreboard.svh(84) @ 18425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=67
+# UVM_INFO filter_scoreboard.svh(84) @ 19025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=68
+# UVM_INFO filter_scoreboard.svh(84) @ 19555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=69
+# UVM_INFO filter_scoreboard.svh(84) @ 20345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=70
+# UVM_INFO filter_scoreboard.svh(84) @ 20965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=71
+# UVM_INFO filter_scoreboard.svh(84) @ 21475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=72
+# UVM_INFO filter_scoreboard.svh(84) @ 22095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=73
+# UVM_INFO filter_scoreboard.svh(84) @ 22845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=74
+# UVM_INFO filter_scoreboard.svh(84) @ 23595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 24325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=75
+# UVM_INFO filter_scoreboard.svh(84) @ 24965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=76
+# UVM_INFO filter_scoreboard.svh(84) @ 25685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=77
+# UVM_INFO filter_scoreboard.svh(84) @ 26445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=78
+# UVM_INFO filter_scoreboard.svh(84) @ 27225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=79
+# UVM_INFO filter_scoreboard.svh(84) @ 27875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=80
+# UVM_INFO filter_scoreboard.svh(84) @ 28595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=81
+# UVM_INFO filter_scoreboard.svh(84) @ 29425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=82
+# UVM_INFO filter_scoreboard.svh(84) @ 30215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=83
+# UVM_INFO filter_scoreboard.svh(84) @ 30945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=84
+# UVM_INFO filter_scoreboard.svh(84) @ 31885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=85
+# UVM_INFO filter_scoreboard.svh(84) @ 32715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=86
+# UVM_INFO filter_scoreboard.svh(84) @ 33395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 34165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=87
+# UVM_INFO filter_scoreboard.svh(84) @ 35075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=88
+# UVM_INFO filter_scoreboard.svh(84) @ 35875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=89
+# UVM_INFO filter_scoreboard.svh(84) @ 36725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=90
+# UVM_INFO filter_scoreboard.svh(84) @ 37835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=91
+# UVM_INFO filter_scoreboard.svh(84) @ 38615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=92
+# UVM_INFO filter_scoreboard.svh(84) @ 39565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=93
+# UVM_INFO filter_scoreboard.svh(84) @ 40375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=94
+# UVM_INFO filter_scoreboard.svh(84) @ 41295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=95
+# UVM_INFO filter_scoreboard.svh(84) @ 42155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=96
+# UVM_INFO filter_scoreboard.svh(84) @ 43055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=97
+# UVM_INFO filter_scoreboard.svh(84) @ 43895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=98
+# UVM_INFO filter_scoreboard.svh(84) @ 44855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=99
+# UVM_INFO filter_scoreboard.svh(84) @ 45675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=100
+# UVM_INFO filter_scoreboard.svh(84) @ 46735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=101
+# UVM_INFO filter_scoreboard.svh(84) @ 47655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=102
+# UVM_INFO filter_scoreboard.svh(84) @ 48635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 49735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=103
+# UVM_INFO filter_scoreboard.svh(84) @ 50815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=104
+# UVM_INFO filter_scoreboard.svh(84) @ 51715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=105
+# UVM_INFO filter_scoreboard.svh(84) @ 52615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=106
+# UVM_INFO filter_scoreboard.svh(84) @ 53825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=107
+# UVM_INFO filter_scoreboard.svh(84) @ 54745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=108
+# UVM_INFO filter_scoreboard.svh(84) @ 55905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=109
+# UVM_INFO filter_scoreboard.svh(84) @ 56925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=110
+# UVM_INFO filter_scoreboard.svh(84) @ 58145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=111
+# UVM_INFO filter_scoreboard.svh(84) @ 59085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=112
+# UVM_INFO filter_scoreboard.svh(84) @ 60055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=113
+# UVM_INFO filter_scoreboard.svh(84) @ 61295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=114
+# UVM_INFO filter_scoreboard.svh(84) @ 62415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=115
+# UVM_INFO filter_scoreboard.svh(84) @ 63345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=116
+# UVM_INFO filter_scoreboard.svh(84) @ 64485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=117
+# UVM_INFO filter_scoreboard.svh(84) @ 65755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=118
+# UVM_INFO filter_scoreboard.svh(84) @ 66825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=119
+# UVM_INFO filter_scoreboard.svh(84) @ 67775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=120
+# UVM_INFO filter_scoreboard.svh(84) @ 68855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=121
+# UVM_INFO filter_scoreboard.svh(84) @ 70035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=122
+# UVM_INFO filter_scoreboard.svh(84) @ 71145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=123
+# UVM_INFO filter_scoreboard.svh(84) @ 72195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=124
+# UVM_INFO filter_scoreboard.svh(84) @ 73675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=125
+# UVM_INFO filter_scoreboard.svh(84) @ 75065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=126
+# UVM_INFO filter_scoreboard.svh(84) @ 76135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=127
+# UVM_INFO filter_scoreboard.svh(84) @ 77435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 78825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=128
+# UVM_INFO filter_scoreboard.svh(84) @ 80095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=129
+# UVM_INFO filter_scoreboard.svh(84) @ 81515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=130
+# UVM_INFO filter_scoreboard.svh(84) @ 82795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=131
+# UVM_INFO filter_scoreboard.svh(84) @ 84105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=132
+# UVM_INFO filter_scoreboard.svh(84) @ 85595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=133
+# UVM_INFO filter_scoreboard.svh(84) @ 86815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=134
+# UVM_INFO filter_scoreboard.svh(84) @ 88125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=135
+# UVM_INFO filter_scoreboard.svh(84) @ 89425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=136
+# UVM_INFO filter_scoreboard.svh(84) @ 90905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=137
+# UVM_INFO filter_scoreboard.svh(84) @ 92285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=138
+# UVM_INFO filter_scoreboard.svh(84) @ 93705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=139
+# UVM_INFO filter_scoreboard.svh(84) @ 95255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=140
+# UVM_INFO filter_scoreboard.svh(84) @ 96705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=141
+# UVM_INFO filter_scoreboard.svh(84) @ 98065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=142
+# UVM_INFO filter_scoreboard.svh(84) @ 99745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=143
+# UVM_INFO filter_scoreboard.svh(84) @ 101095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=144
+# UVM_INFO filter_scoreboard.svh(84) @ 102595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=145
+# UVM_INFO filter_scoreboard.svh(84) @ 104065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=146
+# UVM_INFO filter_scoreboard.svh(84) @ 105605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=147
+# UVM_INFO filter_scoreboard.svh(84) @ 106945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=148
+# UVM_INFO filter_scoreboard.svh(84) @ 108445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=149
+# UVM_INFO filter_scoreboard.svh(84) @ 109775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=150
+# UVM_INFO filter_scoreboard.svh(84) @ 111255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=151
+# UVM_INFO filter_scoreboard.svh(84) @ 113095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=152
+# UVM_INFO filter_scoreboard.svh(84) @ 114795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=153
+# UVM_INFO filter_scoreboard.svh(84) @ 116345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=154
+# UVM_INFO filter_scoreboard.svh(84) @ 118045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=155
+# UVM_INFO filter_scoreboard.svh(84) @ 119765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=156
+# UVM_INFO filter_scoreboard.svh(84) @ 121235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=157
+# UVM_INFO filter_scoreboard.svh(84) @ 122845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=158
+# UVM_INFO filter_scoreboard.svh(84) @ 124305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=159
+# UVM_INFO filter_scoreboard.svh(84) @ 125965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=160
+# UVM_INFO filter_scoreboard.svh(84) @ 127265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=161
+# UVM_INFO filter_scoreboard.svh(84) @ 128885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=162
+# UVM_INFO filter_scoreboard.svh(84) @ 130345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=163
+# UVM_INFO filter_scoreboard.svh(84) @ 132025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=164
+# UVM_INFO filter_scoreboard.svh(84) @ 133475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=165
+# UVM_INFO filter_scoreboard.svh(84) @ 135255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=166
+# UVM_INFO filter_scoreboard.svh(84) @ 137015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=167
+# UVM_INFO filter_scoreboard.svh(84) @ 138735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=168
+# UVM_INFO filter_scoreboard.svh(84) @ 140305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=169
+# UVM_INFO filter_scoreboard.svh(84) @ 142085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 143605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=170
+# UVM_INFO filter_scoreboard.svh(84) @ 145195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=171
+# UVM_INFO filter_scoreboard.svh(84) @ 146965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=172
+# UVM_INFO filter_scoreboard.svh(84) @ 148875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=173
+# UVM_INFO filter_scoreboard.svh(84) @ 150625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=174
+# UVM_INFO filter_scoreboard.svh(84) @ 152275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=175
+# UVM_INFO filter_scoreboard.svh(84) @ 153895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=176
+# UVM_INFO filter_scoreboard.svh(84) @ 155645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=177
+# UVM_INFO filter_scoreboard.svh(84) @ 157165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=178
+# UVM_INFO filter_scoreboard.svh(84) @ 159025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=179
+# UVM_INFO filter_scoreboard.svh(84) @ 160895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=180
+# UVM_INFO filter_scoreboard.svh(84) @ 162675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=181
+# UVM_INFO filter_scoreboard.svh(84) @ 164505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=182
+# UVM_INFO filter_scoreboard.svh(84) @ 166265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=183
+# UVM_INFO filter_scoreboard.svh(84) @ 168035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=184
+# UVM_INFO filter_scoreboard.svh(84) @ 170035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=185
+# UVM_INFO filter_scoreboard.svh(84) @ 172235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=186
+# UVM_INFO filter_scoreboard.svh(84) @ 174235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=187
+# UVM_INFO filter_scoreboard.svh(84) @ 176155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=188
+# UVM_INFO filter_scoreboard.svh(84) @ 178035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=189
+# UVM_INFO filter_scoreboard.svh(84) @ 179705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=190
+# UVM_INFO filter_scoreboard.svh(84) @ 181565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=191
+# UVM_INFO filter_scoreboard.svh(84) @ 183085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=192
+# UVM_INFO filter_scoreboard.svh(84) @ 185295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=193
+# UVM_INFO filter_scoreboard.svh(84) @ 187285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=194
+# UVM_INFO filter_scoreboard.svh(84) @ 189345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=195
+# UVM_INFO filter_scoreboard.svh(84) @ 191205 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=196
+# UVM_INFO filter_scoreboard.svh(84) @ 193075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=197
+# UVM_INFO filter_scoreboard.svh(84) @ 195245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=198
+# UVM_INFO filter_scoreboard.svh(84) @ 197405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=199
+# UVM_INFO filter_scoreboard.svh(84) @ 199335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=200
+# UVM_INFO filter_scoreboard.svh(84) @ 201285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=201
+# UVM_INFO filter_scoreboard.svh(84) @ 203305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=202
+# UVM_INFO filter_scoreboard.svh(84) @ 205365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=203
+# UVM_INFO filter_scoreboard.svh(84) @ 207565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=204
+# UVM_INFO filter_scoreboard.svh(84) @ 209645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=205
+# UVM_INFO filter_scoreboard.svh(84) @ 211895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=206
+# UVM_INFO filter_scoreboard.svh(84) @ 214065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=207
+# UVM_INFO filter_scoreboard.svh(84) @ 216245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=208
+# UVM_INFO filter_scoreboard.svh(84) @ 218525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=209
+# UVM_INFO filter_scoreboard.svh(84) @ 220525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=210
+# UVM_INFO filter_scoreboard.svh(84) @ 222725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=211
+# UVM_INFO filter_scoreboard.svh(84) @ 224955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=212
+# UVM_INFO filter_scoreboard.svh(84) @ 226975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=213
+# UVM_INFO filter_scoreboard.svh(84) @ 229115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=214
+# UVM_INFO filter_scoreboard.svh(84) @ 231095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=215
+# UVM_INFO filter_scoreboard.svh(84) @ 233015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=216
+# UVM_INFO filter_scoreboard.svh(84) @ 235055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=217
+# UVM_INFO filter_scoreboard.svh(84) @ 237115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=218
+# UVM_INFO filter_scoreboard.svh(84) @ 239285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=219
+# UVM_INFO filter_scoreboard.svh(84) @ 241475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=220
+# UVM_INFO filter_scoreboard.svh(84) @ 243795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=221
+# UVM_INFO filter_scoreboard.svh(84) @ 245915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=222
+# UVM_INFO filter_scoreboard.svh(84) @ 248125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=223
+# UVM_INFO filter_scoreboard.svh(84) @ 249885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=224
+# UVM_INFO filter_scoreboard.svh(84) @ 252645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=225
+# UVM_INFO filter_scoreboard.svh(84) @ 254935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=226
+# UVM_INFO filter_scoreboard.svh(84) @ 257315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=227
+# UVM_INFO filter_scoreboard.svh(84) @ 259705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=228
+# UVM_INFO filter_scoreboard.svh(84) @ 261905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=229
+# UVM_INFO filter_scoreboard.svh(84) @ 264385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=230
+# UVM_INFO filter_scoreboard.svh(84) @ 266665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=231
+# UVM_INFO filter_scoreboard.svh(84) @ 268875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=232
+# UVM_INFO filter_scoreboard.svh(84) @ 271125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=233
+# UVM_INFO filter_scoreboard.svh(84) @ 273465 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=234
+# UVM_INFO filter_scoreboard.svh(84) @ 275855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=235
+# UVM_INFO filter_scoreboard.svh(84) @ 277985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=236
+# UVM_INFO filter_scoreboard.svh(84) @ 280275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=237
+# UVM_INFO filter_scoreboard.svh(84) @ 282695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=238
+# UVM_INFO filter_scoreboard.svh(84) @ 284955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=239
+# UVM_INFO filter_scoreboard.svh(84) @ 287425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=240
+# UVM_INFO filter_scoreboard.svh(84) @ 289665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=241
+# UVM_INFO filter_scoreboard.svh(84) @ 292095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=242
+# UVM_INFO filter_scoreboard.svh(84) @ 294485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=243
+# UVM_INFO filter_scoreboard.svh(84) @ 296785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=244
+# UVM_INFO filter_scoreboard.svh(84) @ 299325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=245
+# UVM_INFO filter_scoreboard.svh(84) @ 301505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=246
+# UVM_INFO filter_scoreboard.svh(84) @ 303765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=247
+# UVM_INFO filter_scoreboard.svh(84) @ 306485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=248
+# UVM_INFO filter_scoreboard.svh(84) @ 308965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=249
+# UVM_INFO filter_scoreboard.svh(84) @ 311365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=250
+# UVM_INFO filter_scoreboard.svh(84) @ 314075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=251
+# UVM_INFO filter_scoreboard.svh(84) @ 316675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=252
+# UVM_INFO filter_scoreboard.svh(84) @ 319115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=253
+# UVM_INFO filter_scoreboard.svh(84) @ 321765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=254
+# UVM_INFO filter_scoreboard.svh(84) @ 324635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 327375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=255
+# UVM_INFO filter_scoreboard.svh(84) @ 330275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=256
+# UVM_INFO filter_scoreboard.svh(84) @ 332795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=257
+# UVM_INFO filter_scoreboard.svh(84) @ 335295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=258
+# UVM_INFO filter_scoreboard.svh(84) @ 338125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=259
+# UVM_INFO filter_scoreboard.svh(84) @ 340755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=260
+# UVM_INFO filter_scoreboard.svh(84) @ 343365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=261
+# UVM_INFO filter_scoreboard.svh(84) @ 345965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=262
+# UVM_INFO filter_scoreboard.svh(84) @ 348705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=263
+# UVM_INFO filter_scoreboard.svh(84) @ 351545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=264
+# UVM_INFO filter_scoreboard.svh(84) @ 354335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=265
+# UVM_INFO filter_scoreboard.svh(84) @ 356865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=266
+# UVM_INFO filter_scoreboard.svh(84) @ 359655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=267
+# UVM_INFO filter_scoreboard.svh(84) @ 362495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=268
+# UVM_INFO filter_scoreboard.svh(84) @ 365125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=269
+# UVM_INFO filter_scoreboard.svh(84) @ 367685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=270
+# UVM_INFO filter_scoreboard.svh(84) @ 370275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=271
+# UVM_INFO filter_scoreboard.svh(84) @ 372885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=272
+# UVM_INFO filter_scoreboard.svh(84) @ 375605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=273
+# UVM_INFO filter_scoreboard.svh(84) @ 378365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=274
+# UVM_INFO filter_scoreboard.svh(84) @ 381105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=275
+# UVM_INFO filter_scoreboard.svh(84) @ 383975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=276
+# UVM_INFO filter_scoreboard.svh(84) @ 386655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=277
+# UVM_INFO filter_scoreboard.svh(84) @ 389625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=278
+# UVM_INFO filter_scoreboard.svh(84) @ 392235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=279
+# UVM_INFO filter_scoreboard.svh(84) @ 395195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=280
+# UVM_INFO filter_scoreboard.svh(84) @ 397645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=281
+# UVM_INFO filter_scoreboard.svh(84) @ 400365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=282
+# UVM_INFO filter_scoreboard.svh(84) @ 402925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=283
+# UVM_INFO filter_scoreboard.svh(84) @ 405535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=284
+# UVM_INFO filter_scoreboard.svh(84) @ 408555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=285
+# UVM_INFO filter_scoreboard.svh(84) @ 411645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=286
+# UVM_INFO filter_scoreboard.svh(84) @ 414415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=287
+# UVM_INFO filter_scoreboard.svh(84) @ 417015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=288
+# UVM_INFO filter_scoreboard.svh(84) @ 420215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=289
+# UVM_INFO filter_scoreboard.svh(84) @ 423155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=290
+# UVM_INFO filter_scoreboard.svh(84) @ 426125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=291
+# UVM_INFO filter_scoreboard.svh(84) @ 428775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=292
+# UVM_INFO filter_scoreboard.svh(84) @ 431905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=293
+# UVM_INFO filter_scoreboard.svh(84) @ 434835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=294
+# UVM_INFO filter_scoreboard.svh(84) @ 437835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=295
+# UVM_INFO filter_scoreboard.svh(84) @ 440715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=296
+# UVM_INFO filter_scoreboard.svh(84) @ 443365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=297
+# UVM_INFO filter_scoreboard.svh(84) @ 446525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=298
+# UVM_INFO filter_scoreboard.svh(84) @ 449455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=299
+# UVM_INFO filter_scoreboard.svh(84) @ 452295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=300
+# UVM_INFO filter_scoreboard.svh(84) @ 455315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=301
+# UVM_INFO filter_scoreboard.svh(84) @ 458335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=302
+# UVM_INFO filter_scoreboard.svh(84) @ 461245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=303
+# UVM_INFO filter_scoreboard.svh(84) @ 464315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=304
+# UVM_INFO filter_scoreboard.svh(84) @ 467215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=305
+# UVM_INFO filter_scoreboard.svh(84) @ 470145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=306
+# UVM_INFO filter_scoreboard.svh(84) @ 473575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=307
+# UVM_INFO filter_scoreboard.svh(84) @ 476705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=308
+# UVM_INFO filter_scoreboard.svh(84) @ 479895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=309
+# UVM_INFO filter_scoreboard.svh(84) @ 482895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=310
+# UVM_INFO filter_scoreboard.svh(84) @ 485875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=311
+# UVM_INFO filter_scoreboard.svh(84) @ 489175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=312
+# UVM_INFO filter_scoreboard.svh(84) @ 492095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=313
+# UVM_INFO filter_scoreboard.svh(84) @ 495085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=314
+# UVM_INFO filter_scoreboard.svh(84) @ 498225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=315
+# UVM_INFO filter_scoreboard.svh(84) @ 501325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=316
+# UVM_INFO filter_scoreboard.svh(84) @ 504805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=317
+# UVM_INFO filter_scoreboard.svh(84) @ 508005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=318
+# UVM_INFO filter_scoreboard.svh(84) @ 510805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=319
+# UVM_INFO filter_scoreboard.svh(84) @ 513945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=320
+# UVM_INFO filter_scoreboard.svh(84) @ 517175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=321
+# UVM_INFO filter_scoreboard.svh(84) @ 520555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=322
+# UVM_INFO filter_scoreboard.svh(84) @ 523335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=323
+# UVM_INFO filter_scoreboard.svh(84) @ 526615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=324
+# UVM_INFO filter_scoreboard.svh(84) @ 529615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=325
+# UVM_INFO filter_scoreboard.svh(84) @ 533255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=326
+# UVM_INFO filter_scoreboard.svh(84) @ 536635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=327
+# UVM_INFO filter_scoreboard.svh(84) @ 540365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=328
+# UVM_INFO filter_scoreboard.svh(84) @ 543675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=329
+# UVM_INFO filter_scoreboard.svh(84) @ 546915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=330
+# UVM_INFO filter_scoreboard.svh(84) @ 550215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=331
+# UVM_INFO filter_scoreboard.svh(84) @ 553415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=332
+# UVM_INFO filter_scoreboard.svh(84) @ 556845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=333
+# UVM_INFO filter_scoreboard.svh(84) @ 560225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=334
+# UVM_INFO filter_scoreboard.svh(84) @ 563665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=335
+# UVM_INFO filter_scoreboard.svh(84) @ 567105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=336
+# UVM_INFO filter_scoreboard.svh(84) @ 570395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=337
+# UVM_INFO filter_scoreboard.svh(84) @ 573585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=338
+# UVM_INFO filter_scoreboard.svh(84) @ 576955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=339
+# UVM_INFO filter_scoreboard.svh(84) @ 579995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=340
+# UVM_INFO filter_scoreboard.svh(84) @ 583975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=341
+# UVM_INFO filter_scoreboard.svh(84) @ 587385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=342
+# UVM_INFO filter_scoreboard.svh(84) @ 591125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=343
+# UVM_INFO filter_scoreboard.svh(84) @ 594685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=344
+# UVM_INFO filter_scoreboard.svh(84) @ 598025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=345
+# UVM_INFO filter_scoreboard.svh(84) @ 601875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=346
+# UVM_INFO filter_scoreboard.svh(84) @ 605295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=347
+# UVM_INFO filter_scoreboard.svh(84) @ 608825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=348
+# UVM_INFO filter_scoreboard.svh(84) @ 612275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=349
+# UVM_INFO filter_scoreboard.svh(84) @ 615885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=350
+# UVM_INFO filter_scoreboard.svh(84) @ 619135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=351
+# UVM_INFO filter_scoreboard.svh(84) @ 622385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=352
+# UVM_INFO filter_scoreboard.svh(84) @ 625995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=353
+# UVM_INFO filter_scoreboard.svh(84) @ 629535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=354
+# UVM_INFO filter_scoreboard.svh(84) @ 633155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=355
+# UVM_INFO filter_scoreboard.svh(84) @ 636635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=356
+# UVM_INFO filter_scoreboard.svh(84) @ 640395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=357
+# UVM_INFO filter_scoreboard.svh(84) @ 644185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=358
+# UVM_INFO filter_scoreboard.svh(84) @ 647805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=359
+# UVM_INFO filter_scoreboard.svh(84) @ 651235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=360
+# UVM_INFO filter_scoreboard.svh(84) @ 655015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=361
+# UVM_INFO filter_scoreboard.svh(84) @ 658315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=362
+# UVM_INFO filter_scoreboard.svh(84) @ 661835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=363
+# UVM_INFO filter_scoreboard.svh(84) @ 665685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=364
+# UVM_INFO filter_scoreboard.svh(84) @ 669355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=365
+# UVM_INFO filter_scoreboard.svh(84) @ 673565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=366
+# UVM_INFO filter_scoreboard.svh(84) @ 677215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=367
+# UVM_INFO filter_scoreboard.svh(84) @ 681105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=368
+# UVM_INFO filter_scoreboard.svh(84) @ 684635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=369
+# UVM_INFO filter_scoreboard.svh(84) @ 688625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=370
+# UVM_INFO filter_scoreboard.svh(84) @ 692535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=371
+# UVM_INFO filter_scoreboard.svh(84) @ 695965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=372
+# UVM_INFO filter_scoreboard.svh(84) @ 699585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=373
+# UVM_INFO filter_scoreboard.svh(84) @ 703905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=374
+# UVM_INFO filter_scoreboard.svh(84) @ 707785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=375
+# UVM_INFO filter_scoreboard.svh(84) @ 711735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=376
+# UVM_INFO filter_scoreboard.svh(84) @ 715695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=377
+# UVM_INFO filter_scoreboard.svh(84) @ 719725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=378
+# UVM_INFO filter_scoreboard.svh(84) @ 723605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=379
+# UVM_INFO filter_scoreboard.svh(84) @ 727485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=380
+# UVM_INFO filter_scoreboard.svh(84) @ 731325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=381
+# UVM_INFO filter_scoreboard.svh(84) @ 735145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=382
+# UVM_INFO filter_scoreboard.svh(84) @ 739045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=383
+# UVM_INFO filter_scoreboard.svh(84) @ 742615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=384
+# UVM_INFO filter_scoreboard.svh(84) @ 746435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=385
+# UVM_INFO filter_scoreboard.svh(84) @ 750425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=386
+# UVM_INFO filter_scoreboard.svh(84) @ 754305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=387
+# UVM_INFO filter_scoreboard.svh(84) @ 758185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=388
+# UVM_INFO filter_scoreboard.svh(84) @ 761935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=389
+# UVM_INFO filter_scoreboard.svh(84) @ 765645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=390
+# UVM_INFO filter_scoreboard.svh(84) @ 769595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=391
+# UVM_INFO filter_scoreboard.svh(84) @ 773495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=392
+# UVM_INFO filter_scoreboard.svh(84) @ 777245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=393
+# UVM_INFO filter_scoreboard.svh(84) @ 781165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=394
+# UVM_INFO filter_scoreboard.svh(84) @ 785045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=395
+# UVM_INFO filter_scoreboard.svh(84) @ 789355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=396
+# UVM_INFO filter_scoreboard.svh(84) @ 792885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=397
+# UVM_INFO filter_scoreboard.svh(84) @ 797185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=398
+# UVM_INFO filter_scoreboard.svh(84) @ 800885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=399
+# UVM_INFO filter_scoreboard.svh(84) @ 804905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=400
+# UVM_INFO filter_scoreboard.svh(84) @ 808845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=401
+# UVM_INFO filter_scoreboard.svh(84) @ 812685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=402
+# UVM_INFO filter_scoreboard.svh(84) @ 816625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=403
+# UVM_INFO filter_scoreboard.svh(84) @ 820745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=404
+# UVM_INFO filter_scoreboard.svh(84) @ 824535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=405
+# UVM_INFO filter_scoreboard.svh(84) @ 828575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=406
+# UVM_INFO filter_scoreboard.svh(84) @ 832625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=407
+# UVM_INFO filter_scoreboard.svh(84) @ 836545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=408
+# UVM_INFO filter_scoreboard.svh(84) @ 841065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=409
+# UVM_INFO filter_scoreboard.svh(84) @ 844995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=410
+# UVM_INFO filter_scoreboard.svh(84) @ 849385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=411
+# UVM_INFO filter_scoreboard.svh(84) @ 853775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=412
+# UVM_INFO filter_scoreboard.svh(84) @ 857885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=413
+# UVM_INFO filter_scoreboard.svh(84) @ 862015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=414
+# UVM_INFO filter_scoreboard.svh(84) @ 865835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=415
+# UVM_INFO filter_scoreboard.svh(84) @ 870055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=416
+# UVM_INFO filter_scoreboard.svh(84) @ 874285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=417
+# UVM_INFO filter_scoreboard.svh(84) @ 878345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=418
+# UVM_INFO filter_scoreboard.svh(84) @ 882335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=419
+# UVM_INFO filter_scoreboard.svh(84) @ 886915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=420
+# UVM_INFO filter_scoreboard.svh(84) @ 891095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=421
+# UVM_INFO filter_scoreboard.svh(84) @ 895105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=422
+# UVM_INFO filter_scoreboard.svh(84) @ 899455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=423
+# UVM_INFO filter_scoreboard.svh(84) @ 903435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=424
+# UVM_INFO filter_scoreboard.svh(84) @ 907795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=425
+# UVM_INFO filter_scoreboard.svh(84) @ 912305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=426
+# UVM_INFO filter_scoreboard.svh(84) @ 916605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=427
+# UVM_INFO filter_scoreboard.svh(84) @ 920915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=428
+# UVM_INFO filter_scoreboard.svh(84) @ 925365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=429
+# UVM_INFO filter_scoreboard.svh(84) @ 929345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=430
+# UVM_INFO filter_scoreboard.svh(84) @ 933725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=431
+# UVM_INFO filter_scoreboard.svh(84) @ 938065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=432
+# UVM_INFO filter_scoreboard.svh(84) @ 942455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=433
+# UVM_INFO filter_scoreboard.svh(84) @ 946595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=434
+# UVM_INFO filter_scoreboard.svh(84) @ 950925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=435
+# UVM_INFO filter_scoreboard.svh(84) @ 955325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=436
+# UVM_INFO filter_scoreboard.svh(84) @ 959555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=437
+# UVM_INFO filter_scoreboard.svh(84) @ 964095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=438
+# UVM_INFO filter_scoreboard.svh(84) @ 968375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=439
+# UVM_INFO filter_scoreboard.svh(84) @ 972815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=440
+# UVM_INFO filter_scoreboard.svh(84) @ 977125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=441
+# UVM_INFO filter_scoreboard.svh(84) @ 981525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=442
+# UVM_INFO filter_scoreboard.svh(84) @ 985955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=443
+# UVM_INFO filter_scoreboard.svh(84) @ 990225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=444
+# UVM_INFO filter_scoreboard.svh(84) @ 994775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=445
+# UVM_INFO filter_scoreboard.svh(84) @ 999085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=446
+# UVM_INFO filter_scoreboard.svh(84) @ 1003875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=447
+# UVM_INFO filter_scoreboard.svh(84) @ 1008405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=448
+# UVM_INFO filter_scoreboard.svh(84) @ 1013405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=449
+# UVM_INFO filter_scoreboard.svh(84) @ 1018055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=450
+# UVM_INFO filter_scoreboard.svh(84) @ 1022855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=451
+# UVM_INFO filter_scoreboard.svh(84) @ 1027465 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=452
+# UVM_INFO filter_scoreboard.svh(84) @ 1031855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=453
+# UVM_INFO filter_scoreboard.svh(84) @ 1036085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=454
+# UVM_INFO filter_scoreboard.svh(84) @ 1040455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=455
+# UVM_INFO filter_scoreboard.svh(84) @ 1044795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=456
+# UVM_INFO filter_scoreboard.svh(84) @ 1049305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=457
+# UVM_INFO filter_scoreboard.svh(84) @ 1054075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=458
+# UVM_INFO filter_scoreboard.svh(84) @ 1058545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=459
+# UVM_INFO filter_scoreboard.svh(84) @ 1063115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=460
+# UVM_INFO filter_scoreboard.svh(84) @ 1067575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=461
+# UVM_INFO filter_scoreboard.svh(84) @ 1071955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=462
+# UVM_INFO filter_scoreboard.svh(84) @ 1077015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=463
+# UVM_INFO filter_scoreboard.svh(84) @ 1081785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=464
+# UVM_INFO filter_scoreboard.svh(84) @ 1086255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=465
+# UVM_INFO filter_scoreboard.svh(84) @ 1090615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=466
+# UVM_INFO filter_scoreboard.svh(84) @ 1095145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=467
+# UVM_INFO filter_scoreboard.svh(84) @ 1100035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=468
+# UVM_INFO filter_scoreboard.svh(84) @ 1104755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=469
+# UVM_INFO filter_scoreboard.svh(84) @ 1109285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=470
+# UVM_INFO filter_scoreboard.svh(84) @ 1113845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=471
+# UVM_INFO filter_scoreboard.svh(84) @ 1118685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=472
+# UVM_INFO filter_scoreboard.svh(84) @ 1123325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=473
+# UVM_INFO filter_scoreboard.svh(84) @ 1127535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=474
+# UVM_INFO filter_scoreboard.svh(84) @ 1132215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=475
+# UVM_INFO filter_scoreboard.svh(84) @ 1136845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=476
+# UVM_INFO filter_scoreboard.svh(84) @ 1141765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=477
+# UVM_INFO filter_scoreboard.svh(84) @ 1146575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=478
+# UVM_INFO filter_scoreboard.svh(84) @ 1151925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=479
+# UVM_INFO filter_scoreboard.svh(84) @ 1156935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=480
+# UVM_INFO filter_scoreboard.svh(84) @ 1161995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=481
+# UVM_INFO filter_scoreboard.svh(84) @ 1166625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=482
+# UVM_INFO filter_scoreboard.svh(84) @ 1171125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=483
+# UVM_INFO filter_scoreboard.svh(84) @ 1175805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=484
+# UVM_INFO filter_scoreboard.svh(84) @ 1180845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=485
+# UVM_INFO filter_scoreboard.svh(84) @ 1185765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=486
+# UVM_INFO filter_scoreboard.svh(84) @ 1190545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=487
+# UVM_INFO filter_scoreboard.svh(84) @ 1195245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=488
+# UVM_INFO filter_scoreboard.svh(84) @ 1200555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=489
+# UVM_INFO filter_scoreboard.svh(84) @ 1205265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=490
+# UVM_INFO filter_scoreboard.svh(84) @ 1210155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=491
+# UVM_INFO filter_scoreboard.svh(84) @ 1214995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=492
+# UVM_INFO filter_scoreboard.svh(84) @ 1219665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=493
+# UVM_INFO filter_scoreboard.svh(84) @ 1224055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=494
+# UVM_INFO filter_scoreboard.svh(84) @ 1228685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=495
+# UVM_INFO filter_scoreboard.svh(84) @ 1233435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=496
+# UVM_INFO filter_scoreboard.svh(84) @ 1238455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=497
+# UVM_INFO filter_scoreboard.svh(84) @ 1243395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=498
+# UVM_INFO filter_scoreboard.svh(84) @ 1248655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=499
+# UVM_INFO filter_scoreboard.svh(84) @ 1253135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=500
+# UVM_INFO filter_scoreboard.svh(84) @ 1258055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=501
+# UVM_INFO filter_scoreboard.svh(84) @ 1263195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=502
+# UVM_INFO filter_scoreboard.svh(84) @ 1268055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=503
+# UVM_INFO filter_scoreboard.svh(84) @ 1273055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=504
+# UVM_INFO filter_scoreboard.svh(84) @ 1278065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=505
+# UVM_INFO filter_scoreboard.svh(84) @ 1283295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=506
+# UVM_INFO filter_scoreboard.svh(84) @ 1288315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=507
+# UVM_INFO filter_scoreboard.svh(84) @ 1293375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=508
+# UVM_INFO filter_scoreboard.svh(84) @ 1298935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=509
+# UVM_INFO filter_scoreboard.svh(84) @ 1303685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 1308925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=510
+# UVM_INFO filter_scoreboard.svh(84) @ 1314055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=511
+# UVM_INFO filter_scoreboard.svh(84) @ 1318835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=512
+# UVM_INFO filter_scoreboard.svh(84) @ 1323705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=513
+# UVM_INFO filter_scoreboard.svh(84) @ 1329135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=514
+# UVM_INFO filter_scoreboard.svh(84) @ 1334285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=515
+# UVM_INFO filter_scoreboard.svh(84) @ 1339585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=516
+# UVM_INFO filter_scoreboard.svh(84) @ 1344495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=517
+# UVM_INFO filter_scoreboard.svh(84) @ 1349975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=518
+# UVM_INFO filter_scoreboard.svh(84) @ 1354895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=519
+# UVM_INFO filter_scoreboard.svh(84) @ 1359995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=520
+# UVM_INFO filter_scoreboard.svh(84) @ 1364965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=521
+# UVM_INFO filter_scoreboard.svh(84) @ 1370285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=522
+# UVM_INFO filter_scoreboard.svh(84) @ 1375245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=523
+# UVM_INFO filter_scoreboard.svh(84) @ 1380485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=524
+# UVM_INFO filter_scoreboard.svh(84) @ 1385455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=525
+# UVM_INFO filter_scoreboard.svh(84) @ 1390655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=526
+# UVM_INFO filter_scoreboard.svh(84) @ 1395705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=527
+# UVM_INFO filter_scoreboard.svh(84) @ 1401355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=528
+# UVM_INFO filter_scoreboard.svh(84) @ 1406855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=529
+# UVM_INFO filter_scoreboard.svh(84) @ 1411785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=530
+# UVM_INFO filter_scoreboard.svh(84) @ 1416945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=531
+# UVM_INFO filter_scoreboard.svh(84) @ 1421965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=532
+# UVM_INFO filter_scoreboard.svh(84) @ 1427175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=533
+# UVM_INFO filter_scoreboard.svh(84) @ 1432195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=534
+# UVM_INFO filter_scoreboard.svh(84) @ 1437495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=535
+# UVM_INFO filter_scoreboard.svh(84) @ 1442455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=536
+# UVM_INFO filter_scoreboard.svh(84) @ 1448035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=537
+# UVM_INFO filter_scoreboard.svh(84) @ 1453725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=538
+# UVM_INFO filter_scoreboard.svh(84) @ 1459145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=539
+# UVM_INFO filter_scoreboard.svh(84) @ 1464305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=540
+# UVM_INFO filter_scoreboard.svh(84) @ 1469305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=541
+# UVM_INFO filter_scoreboard.svh(84) @ 1474605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=542
+# UVM_INFO filter_scoreboard.svh(84) @ 1480305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=543
+# UVM_INFO filter_scoreboard.svh(84) @ 1485565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=544
+# UVM_INFO filter_scoreboard.svh(84) @ 1490785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=545
+# UVM_INFO filter_scoreboard.svh(84) @ 1495645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=546
+# UVM_INFO filter_scoreboard.svh(84) @ 1501275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=547
+# UVM_INFO filter_scoreboard.svh(84) @ 1507145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=548
+# UVM_INFO filter_scoreboard.svh(84) @ 1512445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=549
+# UVM_INFO filter_scoreboard.svh(84) @ 1517905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=550
+# UVM_INFO filter_scoreboard.svh(84) @ 1523245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=551
+# UVM_INFO filter_scoreboard.svh(84) @ 1528575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=552
+# UVM_INFO filter_scoreboard.svh(84) @ 1533815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=553
+# UVM_INFO filter_scoreboard.svh(84) @ 1539655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=554
+# UVM_INFO filter_scoreboard.svh(84) @ 1545205 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=555
+# UVM_INFO filter_scoreboard.svh(84) @ 1551055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=556
+# UVM_INFO filter_scoreboard.svh(84) @ 1556345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=557
+# UVM_INFO filter_scoreboard.svh(84) @ 1562065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=558
+# UVM_INFO filter_scoreboard.svh(84) @ 1567705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=559
+# UVM_INFO filter_scoreboard.svh(84) @ 1573255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=560
+# UVM_INFO filter_scoreboard.svh(84) @ 1578925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=561
+# UVM_INFO filter_scoreboard.svh(84) @ 1584475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=562
+# UVM_INFO filter_scoreboard.svh(84) @ 1589835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=563
+# UVM_INFO filter_scoreboard.svh(84) @ 1595395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=564
+# UVM_INFO filter_scoreboard.svh(84) @ 1601075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=565
+# UVM_INFO filter_scoreboard.svh(84) @ 1606955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=566
+# UVM_INFO filter_scoreboard.svh(84) @ 1612835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=567
+# UVM_INFO filter_scoreboard.svh(84) @ 1618565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=568
+# UVM_INFO filter_scoreboard.svh(84) @ 1624325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=569
+# UVM_INFO filter_scoreboard.svh(84) @ 1629915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=570
+# UVM_INFO filter_scoreboard.svh(84) @ 1636095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=571
+# UVM_INFO filter_scoreboard.svh(84) @ 1641955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=572
+# UVM_INFO filter_scoreboard.svh(84) @ 1647355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=573
+# UVM_INFO filter_scoreboard.svh(84) @ 1653045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=574
+# UVM_INFO filter_scoreboard.svh(84) @ 1658625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=575
+# UVM_INFO filter_scoreboard.svh(84) @ 1664395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=576
+# UVM_INFO filter_scoreboard.svh(84) @ 1669925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=577
+# UVM_INFO filter_scoreboard.svh(84) @ 1675815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=578
+# UVM_INFO filter_scoreboard.svh(84) @ 1681745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=579
+# UVM_INFO filter_scoreboard.svh(84) @ 1687375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=580
+# UVM_INFO filter_scoreboard.svh(84) @ 1693515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=581
+# UVM_INFO filter_scoreboard.svh(84) @ 1699215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=582
+# UVM_INFO filter_scoreboard.svh(84) @ 1705315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=583
+# UVM_INFO filter_scoreboard.svh(84) @ 1711685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=584
+# UVM_INFO filter_scoreboard.svh(84) @ 1717735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=585
+# UVM_INFO filter_scoreboard.svh(84) @ 1723375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=586
+# UVM_INFO filter_scoreboard.svh(84) @ 1729615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=587
+# UVM_INFO filter_scoreboard.svh(84) @ 1735775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=588
+# UVM_INFO filter_scoreboard.svh(84) @ 1741555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=589
+# UVM_INFO filter_scoreboard.svh(84) @ 1747515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=590
+# UVM_INFO filter_scoreboard.svh(84) @ 1752885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=591
+# UVM_INFO filter_scoreboard.svh(84) @ 1759305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=592
+# UVM_INFO filter_scoreboard.svh(84) @ 1764715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=593
+# UVM_INFO filter_scoreboard.svh(84) @ 1770455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=594
+# UVM_INFO filter_scoreboard.svh(84) @ 1776955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=595
+# UVM_INFO filter_scoreboard.svh(84) @ 1783145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=596
+# UVM_INFO filter_scoreboard.svh(84) @ 1789225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=597
+# UVM_INFO filter_scoreboard.svh(84) @ 1794735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=598
+# UVM_INFO filter_scoreboard.svh(84) @ 1800785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=599
+# UVM_INFO filter_scoreboard.svh(84) @ 1806815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=600
+# UVM_INFO filter_scoreboard.svh(84) @ 1812795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=601
+# UVM_INFO filter_scoreboard.svh(84) @ 1818525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=602
+# UVM_INFO filter_scoreboard.svh(84) @ 1824245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=603
+# UVM_INFO filter_scoreboard.svh(84) @ 1830565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=604
+# UVM_INFO filter_scoreboard.svh(84) @ 1836525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=605
+# UVM_INFO filter_scoreboard.svh(84) @ 1842665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=606
+# UVM_INFO filter_scoreboard.svh(84) @ 1848945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=607
+# UVM_INFO filter_scoreboard.svh(84) @ 1854945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=608
+# UVM_INFO filter_scoreboard.svh(84) @ 1860825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=609
+# UVM_INFO filter_scoreboard.svh(84) @ 1866335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=610
+# UVM_INFO filter_scoreboard.svh(84) @ 1872315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=611
+# UVM_INFO filter_scoreboard.svh(84) @ 1878735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=612
+# UVM_INFO filter_scoreboard.svh(84) @ 1885115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=613
+# UVM_INFO filter_scoreboard.svh(84) @ 1891145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=614
+# UVM_INFO filter_scoreboard.svh(84) @ 1897835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=615
+# UVM_INFO filter_scoreboard.svh(84) @ 1904425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=616
+# UVM_INFO filter_scoreboard.svh(84) @ 1910905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=617
+# UVM_INFO filter_scoreboard.svh(84) @ 1917235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=618
+# UVM_INFO filter_scoreboard.svh(84) @ 1923275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=619
+# UVM_INFO filter_scoreboard.svh(84) @ 1929415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=620
+# UVM_INFO filter_scoreboard.svh(84) @ 1935605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=621
+# UVM_INFO filter_scoreboard.svh(84) @ 1942075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=622
+# UVM_INFO filter_scoreboard.svh(84) @ 1948475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=623
+# UVM_INFO filter_scoreboard.svh(84) @ 1955085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=624
+# UVM_INFO filter_scoreboard.svh(84) @ 1961115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=625
+# UVM_INFO filter_scoreboard.svh(84) @ 1967535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=626
+# UVM_INFO filter_scoreboard.svh(84) @ 1973745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=627
+# UVM_INFO filter_scoreboard.svh(84) @ 1980085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=628
+# UVM_INFO filter_scoreboard.svh(84) @ 1986365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=629
+# UVM_INFO filter_scoreboard.svh(84) @ 1992765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=630
+# UVM_INFO filter_scoreboard.svh(84) @ 1999295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=631
+# UVM_INFO filter_scoreboard.svh(84) @ 2005415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=632
+# UVM_INFO filter_scoreboard.svh(84) @ 2011535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=633
+# UVM_INFO filter_scoreboard.svh(84) @ 2017425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=634
+# UVM_INFO filter_scoreboard.svh(84) @ 2023675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=635
+# UVM_INFO filter_scoreboard.svh(84) @ 2029925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=636
+# UVM_INFO filter_scoreboard.svh(84) @ 2036645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=637
+# UVM_INFO filter_scoreboard.svh(84) @ 2042965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=638
+# UVM_INFO filter_scoreboard.svh(84) @ 2049685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=639
+# UVM_INFO filter_scoreboard.svh(84) @ 2056285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=640
+# UVM_INFO filter_scoreboard.svh(84) @ 2062675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=641
+# UVM_INFO filter_scoreboard.svh(84) @ 2068935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=642
+# UVM_INFO filter_scoreboard.svh(84) @ 2074815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=643
+# UVM_INFO filter_scoreboard.svh(84) @ 2080815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=644
+# UVM_INFO filter_scoreboard.svh(84) @ 2087125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=645
+# UVM_INFO filter_scoreboard.svh(84) @ 2093535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=646
+# UVM_INFO filter_scoreboard.svh(84) @ 2099905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=647
+# UVM_INFO filter_scoreboard.svh(84) @ 2105975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=648
+# UVM_INFO filter_scoreboard.svh(84) @ 2112515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=649
+# UVM_INFO filter_scoreboard.svh(84) @ 2118515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=650
+# UVM_INFO filter_scoreboard.svh(84) @ 2125345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=651
+# UVM_INFO filter_scoreboard.svh(84) @ 2131845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=652
+# UVM_INFO filter_scoreboard.svh(84) @ 2138585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=653
+# UVM_INFO filter_scoreboard.svh(84) @ 2145235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=654
+# UVM_INFO filter_scoreboard.svh(84) @ 2151755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=655
+# UVM_INFO filter_scoreboard.svh(84) @ 2158355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=656
+# UVM_INFO filter_scoreboard.svh(84) @ 2165315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=657
+# UVM_INFO filter_scoreboard.svh(84) @ 2171775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=658
+# UVM_INFO filter_scoreboard.svh(84) @ 2178145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=659
+# UVM_INFO filter_scoreboard.svh(84) @ 2184415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=660
+# UVM_INFO filter_scoreboard.svh(84) @ 2191225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=661
+# UVM_INFO filter_scoreboard.svh(84) @ 2198485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=662
+# UVM_INFO filter_scoreboard.svh(84) @ 2205185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=663
+# UVM_INFO filter_scoreboard.svh(84) @ 2211445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=664
+# UVM_INFO filter_scoreboard.svh(84) @ 2218105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=665
+# UVM_INFO filter_scoreboard.svh(84) @ 2224685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=666
+# UVM_INFO filter_scoreboard.svh(84) @ 2231315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=667
+# UVM_INFO filter_scoreboard.svh(84) @ 2238065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=668
+# UVM_INFO filter_scoreboard.svh(84) @ 2244575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=669
+# UVM_INFO filter_scoreboard.svh(84) @ 2251405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=670
+# UVM_INFO filter_scoreboard.svh(84) @ 2258275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=671
+# UVM_INFO filter_scoreboard.svh(84) @ 2264905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=672
+# UVM_INFO filter_scoreboard.svh(84) @ 2271715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=673
+# UVM_INFO filter_scoreboard.svh(84) @ 2278315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=674
+# UVM_INFO filter_scoreboard.svh(84) @ 2284855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=675
+# UVM_INFO filter_scoreboard.svh(84) @ 2291725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=676
+# UVM_INFO filter_scoreboard.svh(84) @ 2298785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=677
+# UVM_INFO filter_scoreboard.svh(84) @ 2305705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=678
+# UVM_INFO filter_scoreboard.svh(84) @ 2312685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=679
+# UVM_INFO filter_scoreboard.svh(84) @ 2319745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=680
+# UVM_INFO filter_scoreboard.svh(84) @ 2326415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=681
+# UVM_INFO filter_scoreboard.svh(84) @ 2332985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=682
+# UVM_INFO filter_scoreboard.svh(84) @ 2339805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=683
+# UVM_INFO filter_scoreboard.svh(84) @ 2346575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=684
+# UVM_INFO filter_scoreboard.svh(84) @ 2354115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=685
+# UVM_INFO filter_scoreboard.svh(84) @ 2360695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=686
+# UVM_INFO filter_scoreboard.svh(84) @ 2367935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=687
+# UVM_INFO filter_scoreboard.svh(84) @ 2374835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=688
+# UVM_INFO filter_scoreboard.svh(84) @ 2381785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=689
+# UVM_INFO filter_scoreboard.svh(84) @ 2388965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=690
+# UVM_INFO filter_scoreboard.svh(84) @ 2395785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=691
+# UVM_INFO filter_scoreboard.svh(84) @ 2403015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=692
+# UVM_INFO filter_scoreboard.svh(84) @ 2409835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=693
+# UVM_INFO filter_scoreboard.svh(84) @ 2416925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=694
+# UVM_INFO filter_scoreboard.svh(84) @ 2424125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=695
+# UVM_INFO filter_scoreboard.svh(84) @ 2431065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=696
+# UVM_INFO filter_scoreboard.svh(84) @ 2438245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=697
+# UVM_INFO filter_scoreboard.svh(84) @ 2445365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=698
+# UVM_INFO filter_scoreboard.svh(84) @ 2452145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=699
+# UVM_INFO filter_scoreboard.svh(84) @ 2459255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=700
+# UVM_INFO filter_scoreboard.svh(84) @ 2466375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=701
+# UVM_INFO filter_scoreboard.svh(84) @ 2473515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=702
+# UVM_INFO filter_scoreboard.svh(84) @ 2480545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=703
+# UVM_INFO filter_scoreboard.svh(84) @ 2487835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=704
+# UVM_INFO filter_scoreboard.svh(84) @ 2494895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=705
+# UVM_INFO filter_scoreboard.svh(84) @ 2502195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=706
+# UVM_INFO filter_scoreboard.svh(84) @ 2509545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=707
+# UVM_INFO filter_scoreboard.svh(84) @ 2516715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=708
+# UVM_INFO filter_scoreboard.svh(84) @ 2524075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=709
+# UVM_INFO filter_scoreboard.svh(84) @ 2531215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=710
+# UVM_INFO filter_scoreboard.svh(84) @ 2538595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=711
+# UVM_INFO filter_scoreboard.svh(84) @ 2545595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=712
+# UVM_INFO filter_scoreboard.svh(84) @ 2552365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=713
+# UVM_INFO filter_scoreboard.svh(84) @ 2559775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=714
+# UVM_INFO filter_scoreboard.svh(84) @ 2567025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=715
+# UVM_INFO filter_scoreboard.svh(84) @ 2574005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=716
+# UVM_INFO filter_scoreboard.svh(84) @ 2581455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=717
+# UVM_INFO filter_scoreboard.svh(84) @ 2587995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=718
+# UVM_INFO filter_scoreboard.svh(84) @ 2595475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=719
+# UVM_INFO filter_scoreboard.svh(84) @ 2602545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=720
+# UVM_INFO filter_scoreboard.svh(84) @ 2609635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=721
+# UVM_INFO filter_scoreboard.svh(84) @ 2616905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=722
+# UVM_INFO filter_scoreboard.svh(84) @ 2624865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=723
+# UVM_INFO filter_scoreboard.svh(84) @ 2631775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=724
+# UVM_INFO filter_scoreboard.svh(84) @ 2638805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=725
+# UVM_INFO filter_scoreboard.svh(84) @ 2646015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=726
+# UVM_INFO filter_scoreboard.svh(84) @ 2653345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=727
+# UVM_INFO filter_scoreboard.svh(84) @ 2660595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=728
+# UVM_INFO filter_scoreboard.svh(84) @ 2668215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=729
+# UVM_INFO filter_scoreboard.svh(84) @ 2675125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=730
+# UVM_INFO filter_scoreboard.svh(84) @ 2682625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=731
+# UVM_INFO filter_scoreboard.svh(84) @ 2689935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=732
+# UVM_INFO filter_scoreboard.svh(84) @ 2697335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=733
+# UVM_INFO filter_scoreboard.svh(84) @ 2704845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=734
+# UVM_INFO filter_scoreboard.svh(84) @ 2711905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=735
+# UVM_INFO filter_scoreboard.svh(84) @ 2719535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=736
+# UVM_INFO filter_scoreboard.svh(84) @ 2726835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=737
+# UVM_INFO filter_scoreboard.svh(84) @ 2734225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=738
+# UVM_INFO filter_scoreboard.svh(84) @ 2741445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=739
+# UVM_INFO filter_scoreboard.svh(84) @ 2748955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=740
+# UVM_INFO filter_scoreboard.svh(84) @ 2756305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=741
+# UVM_INFO filter_scoreboard.svh(84) @ 2763545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=742
+# UVM_INFO filter_scoreboard.svh(84) @ 2770825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=743
+# UVM_INFO filter_scoreboard.svh(84) @ 2778405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=744
+# UVM_INFO filter_scoreboard.svh(84) @ 2785875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=745
+# UVM_INFO filter_scoreboard.svh(84) @ 2793665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=746
+# UVM_INFO filter_scoreboard.svh(84) @ 2801275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=747
+# UVM_INFO filter_scoreboard.svh(84) @ 2808585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=748
+# UVM_INFO filter_scoreboard.svh(84) @ 2816355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=749
+# UVM_INFO filter_scoreboard.svh(84) @ 2824005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=750
+# UVM_INFO filter_scoreboard.svh(84) @ 2831315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=751
+# UVM_INFO filter_scoreboard.svh(84) @ 2838835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=752
+# UVM_INFO filter_scoreboard.svh(84) @ 2846785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=753
+# UVM_INFO filter_scoreboard.svh(84) @ 2854455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=754
+# UVM_INFO filter_scoreboard.svh(84) @ 2862265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=755
+# UVM_INFO filter_scoreboard.svh(84) @ 2869465 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=756
+# UVM_INFO filter_scoreboard.svh(84) @ 2877025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=757
+# UVM_INFO filter_scoreboard.svh(84) @ 2884585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=758
+# UVM_INFO filter_scoreboard.svh(84) @ 2892015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=759
+# UVM_INFO filter_scoreboard.svh(84) @ 2898815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=760
+# UVM_INFO filter_scoreboard.svh(84) @ 2906605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=761
+# UVM_INFO filter_scoreboard.svh(84) @ 2914115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=762
+# UVM_INFO filter_scoreboard.svh(84) @ 2921345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=763
+# UVM_INFO filter_scoreboard.svh(84) @ 2929365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=764
+# UVM_INFO filter_scoreboard.svh(84) @ 2937025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=765
+# UVM_INFO filter_scoreboard.svh(84) @ 2944615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=766
+# UVM_INFO filter_scoreboard.svh(84) @ 2952695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=767
+# UVM_INFO filter_scoreboard.svh(84) @ 2960115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=768
+# UVM_INFO filter_scoreboard.svh(84) @ 2968065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=769
+# UVM_INFO filter_scoreboard.svh(84) @ 2975875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=770
+# UVM_INFO filter_scoreboard.svh(84) @ 2983515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=771
+# UVM_INFO filter_scoreboard.svh(84) @ 2991175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=772
+# UVM_INFO filter_scoreboard.svh(84) @ 2998575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=773
+# UVM_INFO filter_scoreboard.svh(84) @ 3006025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=774
+# UVM_INFO filter_scoreboard.svh(84) @ 3014025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=775
+# UVM_INFO filter_scoreboard.svh(84) @ 3021935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=776
+# UVM_INFO filter_scoreboard.svh(84) @ 3030245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=777
+# UVM_INFO filter_scoreboard.svh(84) @ 3037925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=778
+# UVM_INFO filter_scoreboard.svh(84) @ 3045655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=779
+# UVM_INFO filter_scoreboard.svh(84) @ 3053315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=780
+# UVM_INFO filter_scoreboard.svh(84) @ 3061055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=781
+# UVM_INFO filter_scoreboard.svh(84) @ 3068925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=782
+# UVM_INFO filter_scoreboard.svh(84) @ 3076385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=783
+# UVM_INFO filter_scoreboard.svh(84) @ 3084085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=784
+# UVM_INFO filter_scoreboard.svh(84) @ 3092255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=785
+# UVM_INFO filter_scoreboard.svh(84) @ 3100075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=786
+# UVM_INFO filter_scoreboard.svh(84) @ 3107775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=787
+# UVM_INFO filter_scoreboard.svh(84) @ 3115425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=788
+# UVM_INFO filter_scoreboard.svh(84) @ 3123365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=789
+# UVM_INFO filter_scoreboard.svh(84) @ 3130605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=790
+# UVM_INFO filter_scoreboard.svh(84) @ 3138415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=791
+# UVM_INFO filter_scoreboard.svh(84) @ 3146205 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=792
+# UVM_INFO filter_scoreboard.svh(84) @ 3153875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=793
+# UVM_INFO filter_scoreboard.svh(84) @ 3162315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=794
+# UVM_INFO filter_scoreboard.svh(84) @ 3169975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=795
+# UVM_INFO filter_scoreboard.svh(84) @ 3178105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=796
+# UVM_INFO filter_scoreboard.svh(84) @ 3186375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=797
+# UVM_INFO filter_scoreboard.svh(84) @ 3194235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=798
+# UVM_INFO filter_scoreboard.svh(84) @ 3202555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=799
+# UVM_INFO filter_scoreboard.svh(84) @ 3209955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=800
+# UVM_INFO filter_scoreboard.svh(84) @ 3217865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=801
+# UVM_INFO filter_scoreboard.svh(84) @ 3225545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=802
+# UVM_INFO filter_scoreboard.svh(84) @ 3233835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=803
+# UVM_INFO filter_scoreboard.svh(84) @ 3241425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=804
+# UVM_INFO filter_scoreboard.svh(84) @ 3249385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=805
+# UVM_INFO filter_scoreboard.svh(84) @ 3257455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=806
+# UVM_INFO filter_scoreboard.svh(84) @ 3264905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=807
+# UVM_INFO filter_scoreboard.svh(84) @ 3272525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=808
+# UVM_INFO filter_scoreboard.svh(84) @ 3280425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=809
+# UVM_INFO filter_scoreboard.svh(84) @ 3288705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=810
+# UVM_INFO filter_scoreboard.svh(84) @ 3297115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=811
+# UVM_INFO filter_scoreboard.svh(84) @ 3304715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=812
+# UVM_INFO filter_scoreboard.svh(84) @ 3312845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=813
+# UVM_INFO filter_scoreboard.svh(84) @ 3320655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=814
+# UVM_INFO filter_scoreboard.svh(84) @ 3328945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=815
+# UVM_INFO filter_scoreboard.svh(84) @ 3337855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=816
+# UVM_INFO filter_scoreboard.svh(84) @ 3346255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=817
+# UVM_INFO filter_scoreboard.svh(84) @ 3354385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=818
+# UVM_INFO filter_scoreboard.svh(84) @ 3363055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=819
+# UVM_INFO filter_scoreboard.svh(84) @ 3371675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=820
+# UVM_INFO filter_scoreboard.svh(84) @ 3379535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=821
+# UVM_INFO filter_scoreboard.svh(84) @ 3388005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=822
+# UVM_INFO filter_scoreboard.svh(84) @ 3396285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=823
+# UVM_INFO filter_scoreboard.svh(84) @ 3404545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=824
+# UVM_INFO filter_scoreboard.svh(84) @ 3412325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=825
+# UVM_INFO filter_scoreboard.svh(84) @ 3420855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=826
+# UVM_INFO filter_scoreboard.svh(84) @ 3428935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=827
+# UVM_INFO filter_scoreboard.svh(84) @ 3437335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=828
+# UVM_INFO filter_scoreboard.svh(84) @ 3445535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=829
+# UVM_INFO filter_scoreboard.svh(84) @ 3453795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=830
+# UVM_INFO filter_scoreboard.svh(84) @ 3462315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=831
+# UVM_INFO filter_scoreboard.svh(84) @ 3470225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=832
+# UVM_INFO filter_scoreboard.svh(84) @ 3478325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=833
+# UVM_INFO filter_scoreboard.svh(84) @ 3486795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=834
+# UVM_INFO filter_scoreboard.svh(84) @ 3495125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=835
+# UVM_INFO filter_scoreboard.svh(84) @ 3503415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=836
+# UVM_INFO filter_scoreboard.svh(84) @ 3511385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=837
+# UVM_INFO filter_scoreboard.svh(84) @ 3519665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=838
+# UVM_INFO filter_scoreboard.svh(84) @ 3527815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=839
+# UVM_INFO filter_scoreboard.svh(84) @ 3536135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=840
+# UVM_INFO filter_scoreboard.svh(84) @ 3544455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=841
+# UVM_INFO filter_scoreboard.svh(84) @ 3552455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=842
+# UVM_INFO filter_scoreboard.svh(84) @ 3561185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=843
+# UVM_INFO filter_scoreboard.svh(84) @ 3569725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=844
+# UVM_INFO filter_scoreboard.svh(84) @ 3577575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=845
+# UVM_INFO filter_scoreboard.svh(84) @ 3586905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=846
+# UVM_INFO filter_scoreboard.svh(84) @ 3595115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=847
+# UVM_INFO filter_scoreboard.svh(84) @ 3603785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=848
+# UVM_INFO filter_scoreboard.svh(84) @ 3612275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=849
+# UVM_INFO filter_scoreboard.svh(84) @ 3620035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=850
+# UVM_INFO filter_scoreboard.svh(84) @ 3628805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=851
+# UVM_INFO filter_scoreboard.svh(84) @ 3637565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=852
+# UVM_INFO filter_scoreboard.svh(84) @ 3646115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=853
+# UVM_INFO filter_scoreboard.svh(84) @ 3654655 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=854
+# UVM_INFO filter_scoreboard.svh(84) @ 3662945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=855
+# UVM_INFO filter_scoreboard.svh(84) @ 3671415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=856
+# UVM_INFO filter_scoreboard.svh(84) @ 3680355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=857
+# UVM_INFO filter_scoreboard.svh(84) @ 3688895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=858
+# UVM_INFO filter_scoreboard.svh(84) @ 3697395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=859
+# UVM_INFO filter_scoreboard.svh(84) @ 3705815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=860
+# UVM_INFO filter_scoreboard.svh(84) @ 3714185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=861
+# UVM_INFO filter_scoreboard.svh(84) @ 3722735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=862
+# UVM_INFO filter_scoreboard.svh(84) @ 3731125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=863
+# UVM_INFO filter_scoreboard.svh(84) @ 3739585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=864
+# UVM_INFO filter_scoreboard.svh(84) @ 3748255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=865
+# UVM_INFO filter_scoreboard.svh(84) @ 3756665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=866
+# UVM_INFO filter_scoreboard.svh(84) @ 3765665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=867
+# UVM_INFO filter_scoreboard.svh(84) @ 3774875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=868
+# UVM_INFO filter_scoreboard.svh(84) @ 3783345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=869
+# UVM_INFO filter_scoreboard.svh(84) @ 3791955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=870
+# UVM_INFO filter_scoreboard.svh(84) @ 3800135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=871
+# UVM_INFO filter_scoreboard.svh(84) @ 3809005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=872
+# UVM_INFO filter_scoreboard.svh(84) @ 3817765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=873
+# UVM_INFO filter_scoreboard.svh(84) @ 3826425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=874
+# UVM_INFO filter_scoreboard.svh(84) @ 3835125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=875
+# UVM_INFO filter_scoreboard.svh(84) @ 3844315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=876
+# UVM_INFO filter_scoreboard.svh(84) @ 3853105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=877
+# UVM_INFO filter_scoreboard.svh(84) @ 3862165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=878
+# UVM_INFO filter_scoreboard.svh(84) @ 3871415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=879
+# UVM_INFO filter_scoreboard.svh(84) @ 3879995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=880
+# UVM_INFO filter_scoreboard.svh(84) @ 3888755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=881
+# UVM_INFO filter_scoreboard.svh(84) @ 3897485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=882
+# UVM_INFO filter_scoreboard.svh(84) @ 3906765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=883
+# UVM_INFO filter_scoreboard.svh(84) @ 3915715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=884
+# UVM_INFO filter_scoreboard.svh(84) @ 3924535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=885
+# UVM_INFO filter_scoreboard.svh(84) @ 3933225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=886
+# UVM_INFO filter_scoreboard.svh(84) @ 3942195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=887
+# UVM_INFO filter_scoreboard.svh(84) @ 3950835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=888
+# UVM_INFO filter_scoreboard.svh(84) @ 3959645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=889
+# UVM_INFO filter_scoreboard.svh(84) @ 3968825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=890
+# UVM_INFO filter_scoreboard.svh(84) @ 3978065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=891
+# UVM_INFO filter_scoreboard.svh(84) @ 3987075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=892
+# UVM_INFO filter_scoreboard.svh(84) @ 3996555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=893
+# UVM_INFO filter_scoreboard.svh(84) @ 4005565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=894
+# UVM_INFO filter_scoreboard.svh(84) @ 4014685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=895
+# UVM_INFO filter_scoreboard.svh(84) @ 4023405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=896
+# UVM_INFO filter_scoreboard.svh(84) @ 4032105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=897
+# UVM_INFO filter_scoreboard.svh(84) @ 4041335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=898
+# UVM_INFO filter_scoreboard.svh(84) @ 4050605 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=899
+# UVM_INFO filter_scoreboard.svh(84) @ 4059145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=900
+# UVM_INFO filter_scoreboard.svh(84) @ 4068005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=901
+# UVM_INFO filter_scoreboard.svh(84) @ 4076775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=902
+# UVM_INFO filter_scoreboard.svh(84) @ 4086315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=903
+# UVM_INFO filter_scoreboard.svh(84) @ 4095575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=904
+# UVM_INFO filter_scoreboard.svh(84) @ 4104005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=905
+# UVM_INFO filter_scoreboard.svh(84) @ 4112705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=906
+# UVM_INFO filter_scoreboard.svh(84) @ 4121835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=907
+# UVM_INFO filter_scoreboard.svh(84) @ 4130595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=908
+# UVM_INFO filter_scoreboard.svh(84) @ 4139665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=909
+# UVM_INFO filter_scoreboard.svh(84) @ 4148675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=910
+# UVM_INFO filter_scoreboard.svh(84) @ 4157995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=911
+# UVM_INFO filter_scoreboard.svh(84) @ 4167425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=912
+# UVM_INFO filter_scoreboard.svh(84) @ 4176405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=913
+# UVM_INFO filter_scoreboard.svh(84) @ 4185065 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=914
+# UVM_INFO filter_scoreboard.svh(84) @ 4194085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=915
+# UVM_INFO filter_scoreboard.svh(84) @ 4203615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=916
+# UVM_INFO filter_scoreboard.svh(84) @ 4212875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=917
+# UVM_INFO filter_scoreboard.svh(84) @ 4222455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=918
+# UVM_INFO filter_scoreboard.svh(84) @ 4231505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=919
+# UVM_INFO filter_scoreboard.svh(84) @ 4240895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=920
+# UVM_INFO filter_scoreboard.svh(84) @ 4250005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=921
+# UVM_INFO filter_scoreboard.svh(84) @ 4259765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=922
+# UVM_INFO filter_scoreboard.svh(84) @ 4268635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=923
+# UVM_INFO filter_scoreboard.svh(84) @ 4277815 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=924
+# UVM_INFO filter_scoreboard.svh(84) @ 4286905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=925
+# UVM_INFO filter_scoreboard.svh(84) @ 4296325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=926
+# UVM_INFO filter_scoreboard.svh(84) @ 4305865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=927
+# UVM_INFO filter_scoreboard.svh(84) @ 4315555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=928
+# UVM_INFO filter_scoreboard.svh(84) @ 4324785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=929
+# UVM_INFO filter_scoreboard.svh(84) @ 4334385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=930
+# UVM_INFO filter_scoreboard.svh(84) @ 4343665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=931
+# UVM_INFO filter_scoreboard.svh(84) @ 4353085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=932
+# UVM_INFO filter_scoreboard.svh(84) @ 4362135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=933
+# UVM_INFO filter_scoreboard.svh(84) @ 4371315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=934
+# UVM_INFO filter_scoreboard.svh(84) @ 4380825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=935
+# UVM_INFO filter_scoreboard.svh(84) @ 4389885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=936
+# UVM_INFO filter_scoreboard.svh(84) @ 4399685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=937
+# UVM_INFO filter_scoreboard.svh(84) @ 4409095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=938
+# UVM_INFO filter_scoreboard.svh(84) @ 4418545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=939
+# UVM_INFO filter_scoreboard.svh(84) @ 4427935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=940
+# UVM_INFO filter_scoreboard.svh(84) @ 4437575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=941
+# UVM_INFO filter_scoreboard.svh(84) @ 4446895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=942
+# UVM_INFO filter_scoreboard.svh(84) @ 4456295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=943
+# UVM_INFO filter_scoreboard.svh(84) @ 4465705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=944
+# UVM_INFO filter_scoreboard.svh(84) @ 4475365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=945
+# UVM_INFO filter_scoreboard.svh(84) @ 4485125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=946
+# UVM_INFO filter_scoreboard.svh(84) @ 4494225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=947
+# UVM_INFO filter_scoreboard.svh(84) @ 4503505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=948
+# UVM_INFO filter_scoreboard.svh(84) @ 4513265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=949
+# UVM_INFO filter_scoreboard.svh(84) @ 4522515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=950
+# UVM_INFO filter_scoreboard.svh(84) @ 4531735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=951
+# UVM_INFO filter_scoreboard.svh(84) @ 4541185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=952
+# UVM_INFO filter_scoreboard.svh(84) @ 4550735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=953
+# UVM_INFO filter_scoreboard.svh(84) @ 4560265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=954
+# UVM_INFO filter_scoreboard.svh(84) @ 4569435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=955
+# UVM_INFO filter_scoreboard.svh(84) @ 4578885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=956
+# UVM_INFO filter_scoreboard.svh(84) @ 4588335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=957
+# UVM_INFO filter_scoreboard.svh(84) @ 4598365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=958
+# UVM_INFO filter_scoreboard.svh(84) @ 4608125 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=959
+# UVM_INFO filter_scoreboard.svh(84) @ 4617825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=960
+# UVM_INFO filter_scoreboard.svh(84) @ 4627115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=961
+# UVM_INFO filter_scoreboard.svh(84) @ 4636335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=962
+# UVM_INFO filter_scoreboard.svh(84) @ 4646415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=963
+# UVM_INFO filter_scoreboard.svh(84) @ 4656085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=964
+# UVM_INFO filter_scoreboard.svh(84) @ 4665825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=965
+# UVM_INFO filter_scoreboard.svh(84) @ 4675995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=966
+# UVM_INFO filter_scoreboard.svh(84) @ 4685685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=967
+# UVM_INFO filter_scoreboard.svh(84) @ 4695235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=968
+# UVM_INFO filter_scoreboard.svh(84) @ 4704705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=969
+# UVM_INFO filter_scoreboard.svh(84) @ 4714695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=970
+# UVM_INFO filter_scoreboard.svh(84) @ 4723965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=971
+# UVM_INFO filter_scoreboard.svh(84) @ 4733675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=972
+# UVM_INFO filter_scoreboard.svh(84) @ 4743315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=973
+# UVM_INFO filter_scoreboard.svh(84) @ 4753175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=974
+# UVM_INFO filter_scoreboard.svh(84) @ 4763115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=975
+# UVM_INFO filter_scoreboard.svh(84) @ 4772805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=976
+# UVM_INFO filter_scoreboard.svh(84) @ 4782555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=977
+# UVM_INFO filter_scoreboard.svh(84) @ 4791905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=978
+# UVM_INFO filter_scoreboard.svh(84) @ 4801825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=979
+# UVM_INFO filter_scoreboard.svh(84) @ 4811745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=980
+# UVM_INFO filter_scoreboard.svh(84) @ 4821145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=981
+# UVM_INFO filter_scoreboard.svh(84) @ 4831085 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=982
+# UVM_INFO filter_scoreboard.svh(84) @ 4840505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=983
+# UVM_INFO filter_scoreboard.svh(84) @ 4850395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=984
+# UVM_INFO filter_scoreboard.svh(84) @ 4860155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=985
+# UVM_INFO filter_scoreboard.svh(84) @ 4869875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=986
+# UVM_INFO filter_scoreboard.svh(84) @ 4880035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=987
+# UVM_INFO filter_scoreboard.svh(84) @ 4890395 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=988
+# UVM_INFO filter_scoreboard.svh(84) @ 4900255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=989
+# UVM_INFO filter_scoreboard.svh(84) @ 4910465 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=990
+# UVM_INFO filter_scoreboard.svh(84) @ 4920755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=0, length=991
+# UVM_INFO filter_scoreboard.svh(84) @ 4930695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=992
+# UVM_INFO filter_scoreboard.svh(84) @ 4940855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=993
+# UVM_INFO filter_scoreboard.svh(84) @ 4950685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=994
+# UVM_INFO filter_scoreboard.svh(84) @ 4960975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=5, length=995
+# UVM_INFO filter_scoreboard.svh(84) @ 4970865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=996
+# UVM_INFO filter_scoreboard.svh(84) @ 4981105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=3, length=997
+# UVM_INFO filter_scoreboard.svh(84) @ 4991365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=998
+# UVM_INFO filter_scoreboard.svh(84) @ 5001435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Debug packet: type=10, length=999
+# UVM_INFO filter_scoreboard.svh(84) @ 5011525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 5017195 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO filter_base_test.svh(47) @ 5017195 ns: uvm_test_top [filter_debug_test] ---------------------------
+# UVM_INFO filter_base_test.svh(48) @ 5017195 ns: uvm_test_top [filter_debug_test] ---     TEST PASSED     ---
+# UVM_INFO filter_base_test.svh(49) @ 5017195 ns: uvm_test_top [filter_debug_test] ---------------------------
+# === Coverage Summary ===
+# 
+# Input Packet Coverage: 50.00%
+#   Type Coverage: 25.00%
+#   Length Bin Coverage: 25.00%
+#   Length Even/Odd Coverage: 100.00%
+# Input Interface Coverage: 100.00%
+#   Valid Coverage: 100.00%
+#   Ready Coverage: 100.00%
+#   Backpressure Coverage: 100.00%
+# Output Interface Coverage: 100.00%
+#   Valid Coverage: 100.00%
+#   Ready Coverage: 100.00%
+#   Backpressure Coverage: 100.00%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO : 1006
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]   999
+# [TEST_DONE]     1
+# [filter_debug_test]     3
+# ** Note: $finish    : /ecel/apps/reconfig/tools/siemens/questasim/2023.3/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 5017195 ns  Iteration: 54  Instance: /filter_tb
+# End time: 18:31:59 on Apr 15,2025, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
