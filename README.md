@@ -1,166 +1,178 @@
-# UVM-Packet-fliter
-
-
-```markdown
-# AXI4 Packet Filter Verification using UVM
-
-## Project Overview
-
-This project demonstrates the application of **Universal Verification Methodology (UVM)** to verify an AXI4-Stream–based packet filter hardware module. It consists of 3 parts:
-
-1. Building and extending a UVM testbench to verify an AXI packet filter
-2. Creating a directed debug test for waveform clarity
-3. Extending the DUT to add checksum functionality and updating the testbench accordingly
-
-All testbench components were built using UVM best practices and executed using **Questa**, while the final RTL implementation was synthesized in **Vivado** targeting a Xilinx FPGA.
+Here's your rewritten `README.md` for the **UVM Packet Filter** project, perfectly aligned with the formatting and tone of your earlier FSMD lab documentation:
 
 ---
 
-## DUT: Packet Filter Module
+# UVM Packet Filter Verification
 
-The DUT is an AXI4-Stream packet filter that processes incoming data packets where each packet begins with a 16-bit header:
+## Objective
 
-| Bits | Field Name    | Description                   |
-|------|---------------|-------------------------------|
-|15:12 | Message Type  | 4-bit identifier              |
-|11:0  | Length        | Payload length in bytes       |
+The objective of this project is to implement a **Universal Verification Methodology (UVM)** testbench to verify an AXI4-Stream packet filter design. The project is divided into three parts:
 
-### Filter Logic
-- Packets with supported message types `{0x0, 0xA, 0x5, 0x3}` are forwarded
-- Others are dropped entirely
-- AXI4-Stream protocol: `tvalid`, `tdata`, `tlast`, `tready`
+1. Completing the UVM testbench and achieving 100% coverage
+2. Creating a directed test for waveform clarity
+3. Extending the DUT to include checksum logic and adapting the testbench accordingly
+
+All verification tasks were completed using **Questa**, and RTL synthesis was performed in **Vivado** targeting a Xilinx FPGA device.
+
+---
+
+## DUT: AXI4-Stream Packet Filter
+
+The DUT is a packet filter that receives AXI4-Stream input packets. Each packet begins with a 16-bit header:
+
+| Bits  | Field Name   | Description             |
+| ----- | ------------ | ----------------------- |
+| 15:12 | Message Type | 4-bit identifier        |
+| 11:0  | Length       | Payload length in bytes |
+
+### Filtering Behavior
+
+* Forwards packets with message types: `0x0`, `0xA`, `0x5`, `0x3`
+* Drops packets with all other message types
+* Operates on standard AXI4-Stream signals: `tvalid`, `tdata`, `tready`, and `tlast`
 
 ---
 
 ## Part 1: UVM Testbench Completion & Coverage
 
 ### Goals
-- Complete a partially implemented UVM environment
-- Connect missing agents, scoreboard, and testbench logic
-- Achieve **100% functional and code coverage**
 
-### Key Tasks
-- Completed `filter_env.svh` by instantiating and connecting the output agent and scoreboard
-- Enhanced `filter_sequence.svh` to constrain `Packet` objects for broader message types and lengths
-- Tuned testbench parameters (`NUM_PACKETS`, `MAX_LEN`) in `filter_tb.sv`
+* Finalize a partially implemented UVM environment
+* Instantiate and connect missing components
+* Achieve 100% functional and code coverage
+
+### Implementation Highlights
+
+* Completed `filter_env.svh` by instantiating the output agent and scoreboard
+* Enhanced `filter_sequence.svh` to generate diverse `Packet` types with varying lengths
+* Adjusted test parameters (`NUM_PACKETS`, `MAX_LEN`) in `filter_tb.sv` for broad coverage
 
 ### Results
-- Verified correctness of DUT with randomized sequences
-- Achieved 100% functional and toggle coverage in Questa
-- Screenshot and description included in `part1/part1.pdf`
+
+* Functional correctness verified through randomized testing
+* Achieved 100% toggle and functional coverage using Questa
+* Results documented in `part1/part1.pdf`
 
 ---
 
-## Part 2: Directed Debug Test Creation
+## Part 2: Directed Debug Test
 
 ### Goals
-- Add a deterministic test with simple, predictable patterns
-- Improve waveform readability and debug capability
 
-### Key Tasks
-- Created a new UVM sequence: `filter_debug_sequence` in `filter_sequence.svh`
-  - Each packet increases in length (0, 1, 2, …)
-  - Payload filled with fixed value `8'h55` for visual clarity
-- Created a new UVM test: `filter_debug_test.svh`
-- Updated `filter_tb_pkg.sv` and `Makefile` to integrate new test
+* Create a deterministic test for waveform clarity
+* Improve debug visibility in simulation
+
+### Implementation Highlights
+
+* Implemented `filter_debug_sequence`:
+
+  * Packet lengths increment from 0, 1, 2, ...
+  * All payload bytes set to `8'h55` for easy visual recognition
+* Added a new UVM test: `filter_debug_test.svh`
+* Integrated test into `filter_tb_pkg.sv` and `Makefile`
 
 ### Results
-- Visual confirmation in Questa waveform viewer
-- Test clearly distinguishes valid payload bytes from padding
-- Screenshot included in `part2/part2.pdf`
+
+* Waveform clearly shows structure of valid payloads and padding
+* Easy visual confirmation of packet forwarding behavior
+* Included in `part2/part2.pdf`
 
 ---
 
-## Part 3: DUT Extension – Checksum Appending
+## Part 3: DUT Extension – Checksum Functionality
 
-### New DUT Feature
-- Compute an **8-bit checksum** using XOR of all bytes in the packet (including the header)
-- Append the checksum to the end of the output packet:
-  - **Even-length payloads**: Add a new beat with only checksum
-  - **Odd-length payloads**: Use remaining byte in final beat
+### New Feature
 
-### Challenges Addressed
-- Valid byte tracking for AXI4-Stream `tdata[15:0]`
-- Ensuring checksum is not calculated on invalid bytes
-- Correctly aligning `tlast` and injecting final checksum beat
+* Appends an **8-bit checksum** to each valid output packet
+* Checksum is computed as XOR of all bytes in the packet, including header
 
-### Testbench Integration
-- Updated DUT logic in `filter.sv`
-- Used provided updated `packet.svh` and `filter_scoreboard.svh` from `part3/`
-- Reused existing UVM tests to validate correctness
+### Edge Case Handling
+
+* Even payload length → checksum sent in an extra beat
+* Odd payload length → checksum fits within the final beat
+
+### Implementation Highlights
+
+* Updated DUT logic in `filter.sv`
+* Integrated new `packet.svh` and `filter_scoreboard.svh` from `part3/`
+* Reused UVM tests to validate checksum functionality
 
 ### Results
-- Final simulation passed with 100% coverage
-- Synthesized successfully in Vivado with no critical warnings
-- Screenshots of both included in `part3/part3.pdf`
+
+* Simulation passed with 100% coverage
+* DUT synthesized successfully in Vivado with no critical warnings
+* Documentation provided in `part3/part3.pdf`
 
 ---
 
-## Extra Credit Opportunities (Optional)
+## Extra Credit Features (Optional)
 
-These were explored as design enhancements and are documented in `extra_credit/extra_credit.pdf`:
+Additional enhancements implemented and documented in `extra_credit/extra_credit.pdf`:
 
-1. **No Input Backpressure**  
-   Modified the DUT to always keep `s_axis_tready == 1`  
-   Added assertion to confirm never deasserts
+1. **No Input Backpressure**
 
-2. **Support for Variable AXI Interface Widths**  
-   Extended DUT to work with `AXI_WIDTH = 8, 16, 32, 64`  
-   Handled header parsing and packet alignment dynamically
+   * Modified DUT to keep `s_axis_tready` asserted at all times
+   * Added assertion to verify constant readiness
 
-3. **Different Input/Output Interface Widths**  
-   Created version where `input` is 8-bit AXI and `output` is 32-bit  
-   Required internal data realignment and beat re-packing
+2. **Variable AXI Interface Widths**
+
+   * Extended DUT to support `AXI_WIDTH = 8, 16, 32, 64`
+   * Adjusted logic to handle variable-width header parsing and payload alignment
+
+3. **Asymmetric Interface Widths**
+
+   * Implemented version with 8-bit input AXI and 32-bit output AXI
+   * Realigned and packed data internally across interface widths
 
 ---
 
 ## Directory Structure
 
-
-
 ```bash
 ├── part1
-│   ├── all testbench files (.sv and .svh)
-|   ├── Makefile
-|   ├── sources.txt
+│   ├── [testbench files]
+│   ├── Makefile
+│   ├── sources.txt
 │   └── part1.pdf
 ├── part2
-│   ├── all testbench files (.sv and .svh)
-|   ├── Makefile
-|   ├── sources.txt
+│   ├── [testbench files]
+│   ├── Makefile
+│   ├── sources.txt
 │   └── part2.pdf
 ├── part3
-│   ├── all testbench files (.sv and .svh)
-|   ├── Makefile
-|   ├── sources.txt
+│   ├── [testbench files]
+│   ├── Makefile
+│   ├── sources.txt
 │   └── part3.pdf
 ├── extra_credit
-│   ├── all corresponding files (use whatever directories you want)
+│   ├── [optional files]
 │   └── extra_credit.pdf
 └── README.md
+```
 
 ---
 
-## Key Takeaways
+## Summary & Key Takeaways
 
-- Developed a complete **UVM-based verification environment**
-- Extended testbench with **directed** and **constrained-random** sequences
-- Implemented a checksum-based AXI4 filter with proper protocol alignment
-- Synthesized and validated RTL in Vivado, following **best design practices**
-- Explored backpressure-free and width-scalable AXI architectures
+* Completed a modular, reusable **UVM testbench** for AXI4-Stream interfaces
+* Used both **directed** and **constrained-random** sequences for thorough validation
+* Extended the RTL to include checksum logic while maintaining AXI protocol compliance
+* Explored additional AXI configurations for improved robustness
+* Verified simulation correctness and successful Vivado synthesis
 
 ---
 
 ## Tools Used
 
-- **Questa** (command-line & GUI) for UVM simulation, coverage, and waveform analysis
-- **Vivado** for RTL synthesis and warnings/latch checking
-- **SystemVerilog** for DUT, testbench, and reference model development
-- **Makefile**-based flow for automation and repeatability
+* **Questa**: UVM simulation, waveform analysis, and coverage
+* **Vivado**: RTL synthesis and timing/resource evaluation
+* **SystemVerilog**: DUT and testbench development
+* **Makefiles**: Automation of build, simulation, and regression flows
 
 ---
 
 ## License
 
-This repository is a personal project built as part of a graduate-level course on digital verification and design. All code and documents are for educational and demonstration purposes.
-```
+This project was developed as part of a graduate-level digital design and verification course. All source files and documents are for educational use only.
+
+---
