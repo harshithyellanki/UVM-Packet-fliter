@@ -1,6 +1,3 @@
-Here's your rewritten `README.md` for the **UVM Packet Filter** project, perfectly aligned with the formatting and tone of your earlier FSMD lab documentation:
-
----
 
 # UVM Packet Filter Verification
 
