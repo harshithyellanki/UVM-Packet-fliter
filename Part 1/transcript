@@ -1,0 +1,1379 @@
+# vsim -c -debugDB -voptargs="+acc" "+UVM_NO_RELNOTES" "+UVM_VERBOSITY=UVM_MEDIUM" "+UVM_TESTNAME=filter_packet_test" -do "run -all" filter_tb_opt 
+# Start time: 18:28:25 on Apr 15,2025
+# //  Questa Sim-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.axi4_stream_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.axi4_stream_pkg(fast)
+# Loading work.filter_tb_pkg(fast)
+# Loading work.axi4_stream_pkg_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.filter_tb(fast)
+# Loading work.axi4_stream_if(fast__3)
+# Loading work.filter(fast)
+# Loading work.fifo(fast)
+# Loading /ecel/apps/reconfig/tools/siemens/questasim/2023.3/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# It appears vopt was not run with -debugdb option on this design.
+# Advanced Causality and Schematic debug features will not be available.
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test filter_packet_test...
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               filter_packet_test          -     @479 
+#   env                      filter_env                  -     @486 
+#     agent_in               uvm_agent                   -     @493 
+#       driver               uvm_driver #(REQ,RSP)       -     @642 
+#         rsp_port           uvm_analysis_port           -     @657 
+#         seq_item_port      uvm_seq_item_pull_port      -     @649 
+#       monitor              uvm_monitor                 -     @665 
+#         ap                 uvm_analysis_port           -     @672 
+#       sequencer            uvm_sequencer               -     @533 
+#         rsp_export         uvm_analysis_export         -     @540 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @634 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     agent_out              uvm_agent                   -     @500 
+#       driver               uvm_driver #(REQ,RSP)       -     @795 
+#         rsp_port           uvm_analysis_port           -     @810 
+#         seq_item_port      uvm_seq_item_pull_port      -     @802 
+#       monitor              uvm_monitor                 -     @818 
+#         ap                 uvm_analysis_port           -     @825 
+#       sequencer            uvm_sequencer               -     @686 
+#         rsp_export         uvm_analysis_export         -     @693 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @787 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     input_coverage         filter_input_coverage       -     @514 
+#       in0_fifo             uvm_tlm_analysis_fifo #(T)  -     @846 
+#         analysis_export    uvm_analysis_imp            -     @885 
+#         get_ap             uvm_analysis_port           -     @877 
+#         get_peek_export    uvm_get_peek_imp            -     @861 
+#         put_ap             uvm_analysis_port           -     @869 
+#         put_export         uvm_put_imp                 -     @853 
+#       in_ae                uvm_analysis_export         -     @838 
+#     output_coverage        filter_output_coverage      -     @521 
+#       out_ae               uvm_analysis_export         -     @893 
+#       out_fifo             uvm_tlm_analysis_fifo #(T)  -     @901 
+#         analysis_export    uvm_analysis_imp            -     @940 
+#         get_ap             uvm_analysis_port           -     @932 
+#         get_peek_export    uvm_get_peek_imp            -     @916 
+#         put_ap             uvm_analysis_port           -     @924 
+#         put_export         uvm_put_imp                 -     @908 
+#     scoreboard             filter_scoreboard           -     @507 
+#       in_ae                uvm_analysis_export         -     @948 
+#       in_fifo              uvm_tlm_analysis_fifo #(T)  -     @964 
+#         analysis_export    uvm_analysis_imp            -     @1003
+#         get_ap             uvm_analysis_port           -     @995 
+#         get_peek_export    uvm_get_peek_imp            -     @979 
+#         put_ap             uvm_analysis_port           -     @987 
+#         put_export         uvm_put_imp                 -     @971 
+#       out_ae               uvm_analysis_export         -     @956 
+#       out_fifo             uvm_tlm_analysis_fifo #(T)  -     @1011
+#         analysis_export    uvm_analysis_imp            -     @1050
+#         get_ap             uvm_analysis_port           -     @1042
+#         get_peek_export    uvm_get_peek_imp            -     @1026
+#         put_ap             uvm_analysis_port           -     @1034
+#         put_export         uvm_put_imp                 -     @1018
+# ------------------------------------------------------------------
+# Randomized packet: type=14, length=1545
+# Randomized packet: type=0, length=3215
+# Randomized packet: type=2, length=3490
+# UVM_INFO filter_scoreboard.svh(84) @ 39185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=3252
+# Randomized packet: type=7, length=835
+# Randomized packet: type=11, length=2081
+# Randomized packet: type=4, length=872
+# Randomized packet: type=2, length=1968
+# Randomized packet: type=14, length=3414
+# Randomized packet: type=13, length=138
+# Randomized packet: type=9, length=3182
+# Randomized packet: type=3, length=26
+# Randomized packet: type=1, length=192
+# Randomized packet: type=2, length=3238
+# UVM_INFO filter_scoreboard.svh(84) @ 135755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=448
+# Randomized packet: type=10, length=82
+# Randomized packet: type=9, length=574
+# UVM_INFO filter_scoreboard.svh(84) @ 156015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1463
+# Randomized packet: type=5, length=1666
+# Randomized packet: type=9, length=1206
+# UVM_INFO filter_scoreboard.svh(84) @ 182925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1237
+# Randomized packet: type=1, length=1563
+# Randomized packet: type=11, length=3343
+# Randomized packet: type=8, length=3366
+# Randomized packet: type=4, length=1745
+# Randomized packet: type=5, length=3200
+# Randomized packet: type=0, length=4012
+# UVM_INFO filter_scoreboard.svh(84) @ 277505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3426
+# UVM_INFO filter_scoreboard.svh(84) @ 317235 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=1061
+# Randomized packet: type=9, length=1799
+# Randomized packet: type=13, length=651
+# Randomized packet: type=6, length=941
+# Randomized packet: type=4, length=3711
+# Randomized packet: type=2, length=3967
+# Randomized packet: type=15, length=2079
+# Randomized packet: type=4, length=2621
+# Randomized packet: type=14, length=755
+# Randomized packet: type=8, length=734
+# Randomized packet: type=1, length=865
+# Randomized packet: type=14, length=2559
+# Randomized packet: type=1, length=1344
+# Randomized packet: type=6, length=3139
+# Randomized packet: type=1, length=3394
+# Randomized packet: type=7, length=539
+# Randomized packet: type=15, length=2101
+# Randomized packet: type=3, length=2154
+# Randomized packet: type=9, length=3525
+# UVM_INFO filter_scoreboard.svh(84) @ 517425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=4013
+# Randomized packet: type=15, length=1867
+# Randomized packet: type=1, length=1701
+# Randomized packet: type=12, length=1736
+# Randomized packet: type=9, length=1433
+# Randomized packet: type=0, length=3251
+# Randomized packet: type=12, length=1310
+# UVM_INFO filter_scoreboard.svh(84) @ 621695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=3420
+# Randomized packet: type=6, length=3943
+# Randomized packet: type=3, length=997
+# Randomized packet: type=4, length=3510
+# UVM_INFO filter_scoreboard.svh(84) @ 675555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=994
+# Randomized packet: type=14, length=1719
+# Randomized packet: type=14, length=1829
+# Randomized packet: type=4, length=938
+# Randomized packet: type=15, length=1824
+# Randomized packet: type=8, length=3883
+# Randomized packet: type=10, length=975
+# Randomized packet: type=0, length=359
+# Randomized packet: type=15, length=2609
+# UVM_INFO filter_scoreboard.svh(84) @ 758965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 762495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=1812
+# Randomized packet: type=12, length=3772
+# Randomized packet: type=1, length=1039
+# Randomized packet: type=0, length=478
+# Randomized packet: type=1, length=1070
+# UVM_INFO filter_scoreboard.svh(84) @ 813265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=2004
+# Randomized packet: type=15, length=1415
+# UVM_INFO filter_scoreboard.svh(84) @ 838545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=1743
+# Randomized packet: type=5, length=1373
+# Randomized packet: type=15, length=1029
+# UVM_INFO filter_scoreboard.svh(84) @ 867745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=3531
+# Randomized packet: type=12, length=1224
+# Randomized packet: type=15, length=1175
+# Randomized packet: type=4, length=3059
+# Randomized packet: type=10, length=2567
+# Randomized packet: type=5, length=872
+# UVM_INFO filter_scoreboard.svh(84) @ 943545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=3316
+# UVM_INFO filter_scoreboard.svh(84) @ 952005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=28
+# Randomized packet: type=13, length=1844
+# UVM_INFO filter_scoreboard.svh(84) @ 968865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1435
+# Randomized packet: type=1, length=3541
+# Randomized packet: type=9, length=2743
+# Randomized packet: type=10, length=2213
+# Randomized packet: type=10, length=2808
+# UVM_INFO filter_scoreboard.svh(84) @ 1038935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=304
+# Randomized packet: type=13, length=687
+# UVM_INFO filter_scoreboard.svh(84) @ 1066385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 1069515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1278
+# Randomized packet: type=4, length=3716
+# UVM_INFO filter_scoreboard.svh(84) @ 1086245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1063
+# Randomized packet: type=9, length=1452
+# Randomized packet: type=13, length=1470
+# Randomized packet: type=3, length=717
+# Randomized packet: type=2, length=1272
+# UVM_INFO filter_scoreboard.svh(84) @ 1131455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1306
+# Randomized packet: type=9, length=630
+# Randomized packet: type=8, length=3506
+# Randomized packet: type=12, length=1173
+# Randomized packet: type=15, length=3405
+# Randomized packet: type=13, length=3775
+# Randomized packet: type=6, length=476
+# Randomized packet: type=13, length=684
+# Randomized packet: type=4, length=90
+# Randomized packet: type=1, length=1242
+# Randomized packet: type=2, length=1547
+# Randomized packet: type=5, length=109
+# Randomized packet: type=11, length=2829
+# UVM_INFO filter_scoreboard.svh(84) @ 1228365 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3442
+# Randomized packet: type=1, length=3279
+# Randomized packet: type=8, length=1739
+# Randomized packet: type=9, length=823
+# Randomized packet: type=2, length=1154
+# Randomized packet: type=2, length=975
+# Randomized packet: type=1, length=1239
+# Randomized packet: type=11, length=1089
+# Randomized packet: type=14, length=2183
+# Randomized packet: type=12, length=3278
+# Randomized packet: type=9, length=2803
+# Randomized packet: type=2, length=1460
+# Randomized packet: type=6, length=2932
+# Randomized packet: type=14, length=1625
+# Randomized packet: type=0, length=1694
+# Randomized packet: type=0, length=1830
+# UVM_INFO filter_scoreboard.svh(84) @ 1399955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3489
+# UVM_INFO filter_scoreboard.svh(84) @ 1417765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=2669
+# Randomized packet: type=6, length=839
+# Randomized packet: type=3, length=2658
+# Randomized packet: type=11, length=2515
+# UVM_INFO filter_scoreboard.svh(84) @ 1478975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=875
+# Randomized packet: type=9, length=2798
+# UVM_INFO filter_scoreboard.svh(84) @ 1499995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=1762
+# Randomized packet: type=3, length=3065
+# Randomized packet: type=14, length=3911
+# UVM_INFO filter_scoreboard.svh(84) @ 1553485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=3871
+# Randomized packet: type=1, length=2908
+# Randomized packet: type=6, length=1367
+# Randomized packet: type=0, length=2430
+# Randomized packet: type=5, length=1965
+# UVM_INFO filter_scoreboard.svh(84) @ 1638405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=4083
+# UVM_INFO filter_scoreboard.svh(84) @ 1657825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=2186
+# Randomized packet: type=11, length=2857
+# Randomized packet: type=2, length=2923
+# Randomized packet: type=6, length=540
+# Randomized packet: type=11, length=900
+# Randomized packet: type=2, length=3075
+# Randomized packet: type=0, length=306
+# Randomized packet: type=0, length=3741
+# UVM_INFO filter_scoreboard.svh(84) @ 1743985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=3657
+# UVM_INFO filter_scoreboard.svh(84) @ 1781135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=2405
+# Randomized packet: type=9, length=793
+# Randomized packet: type=5, length=3261
+# Randomized packet: type=14, length=1040
+# UVM_INFO filter_scoreboard.svh(84) @ 1848145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=3094
+# Randomized packet: type=14, length=2018
+# UVM_INFO filter_scoreboard.svh(84) @ 1883695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=3669
+# Randomized packet: type=9, length=2155
+# UVM_INFO filter_scoreboard.svh(84) @ 1931515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=3076
+# Randomized packet: type=12, length=651
+# Randomized packet: type=3, length=2126
+# Randomized packet: type=4, length=2183
+# UVM_INFO filter_scoreboard.svh(84) @ 1982495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=3844
+# Randomized packet: type=3, length=2183
+# Randomized packet: type=2, length=3026
+# UVM_INFO filter_scoreboard.svh(84) @ 2034175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=2871
+# Randomized packet: type=1, length=3079
+# Randomized packet: type=10, length=1485
+# Randomized packet: type=7, length=2631
+# UVM_INFO filter_scoreboard.svh(84) @ 2093535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=1422
+# Randomized packet: type=5, length=4032
+# UVM_INFO filter_scoreboard.svh(84) @ 2120595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1102
+# UVM_INFO filter_scoreboard.svh(84) @ 2161855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=255
+# Randomized packet: type=2, length=2666
+# Randomized packet: type=2, length=2987
+# Randomized packet: type=1, length=2375
+# Randomized packet: type=2, length=474
+# Randomized packet: type=9, length=1179
+# Randomized packet: type=9, length=280
+# Randomized packet: type=14, length=942
+# Randomized packet: type=14, length=1315
+# Randomized packet: type=5, length=497
+# Randomized packet: type=9, length=1202
+# UVM_INFO filter_scoreboard.svh(84) @ 2234985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=4000
+# Randomized packet: type=10, length=1909
+# UVM_INFO filter_scoreboard.svh(84) @ 2281005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=254
+# Randomized packet: type=13, length=398
+# UVM_INFO filter_scoreboard.svh(84) @ 2300225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3767
+# Randomized packet: type=6, length=3128
+# Randomized packet: type=13, length=1965
+# Randomized packet: type=1, length=3385
+# Randomized packet: type=2, length=612
+# Randomized packet: type=13, length=2155
+# Randomized packet: type=13, length=437
+# Randomized packet: type=15, length=2819
+# Randomized packet: type=9, length=1829
+# Randomized packet: type=8, length=2582
+# Randomized packet: type=0, length=1883
+# Randomized packet: type=6, length=3860
+# UVM_INFO filter_scoreboard.svh(84) @ 2436275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1927
+# Randomized packet: type=6, length=1360
+# Randomized packet: type=15, length=2029
+# Randomized packet: type=14, length=3432
+# Randomized packet: type=10, length=380
+# Randomized packet: type=11, length=657
+# UVM_INFO filter_scoreboard.svh(84) @ 2503455 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=547
+# Randomized packet: type=3, length=1577
+# Randomized packet: type=9, length=1192
+# UVM_INFO filter_scoreboard.svh(84) @ 2525885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=2265
+# Randomized packet: type=13, length=1578
+# Randomized packet: type=13, length=2047
+# Randomized packet: type=11, length=387
+# Randomized packet: type=4, length=277
+# Randomized packet: type=10, length=4087
+# Randomized packet: type=6, length=872
+# UVM_INFO filter_scoreboard.svh(84) @ 2605385 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1221
+# Randomized packet: type=0, length=2439
+# Randomized packet: type=11, length=3269
+# UVM_INFO filter_scoreboard.svh(84) @ 2640315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1792
+# Randomized packet: type=9, length=2401
+# Randomized packet: type=3, length=1368
+# Randomized packet: type=5, length=3400
+# UVM_INFO filter_scoreboard.svh(84) @ 2691625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3978
+# UVM_INFO filter_scoreboard.svh(84) @ 2725445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=248
+# Randomized packet: type=8, length=741
+# UVM_INFO filter_scoreboard.svh(84) @ 2765075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=1933
+# Randomized packet: type=14, length=642
+# Randomized packet: type=9, length=1317
+# Randomized packet: type=12, length=3790
+# Randomized packet: type=3, length=3409
+# Randomized packet: type=2, length=1984
+# UVM_INFO filter_scoreboard.svh(84) @ 2843105 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=2287
+# Randomized packet: type=14, length=3951
+# Randomized packet: type=2, length=1706
+# Randomized packet: type=14, length=3692
+# Randomized packet: type=5, length=3134
+# Randomized packet: type=9, length=1888
+# UVM_INFO filter_scoreboard.svh(84) @ 2942525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=2205
+# Randomized packet: type=6, length=3330
+# Randomized packet: type=14, length=3940
+# Randomized packet: type=3, length=3486
+# Randomized packet: type=10, length=3053
+# UVM_INFO filter_scoreboard.svh(84) @ 3034795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=2337
+# UVM_INFO filter_scoreboard.svh(84) @ 3065075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3828
+# UVM_INFO filter_scoreboard.svh(84) @ 3088135 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=811
+# Randomized packet: type=10, length=2168
+# UVM_INFO filter_scoreboard.svh(84) @ 3115295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=3965
+# UVM_INFO filter_scoreboard.svh(84) @ 3136475 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=1386
+# UVM_INFO filter_scoreboard.svh(84) @ 3176015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=2809
+# Randomized packet: type=9, length=1932
+# Randomized packet: type=13, length=2098
+# Randomized packet: type=15, length=2406
+# Randomized packet: type=1, length=3209
+# Randomized packet: type=3, length=1774
+# Randomized packet: type=14, length=2556
+# UVM_INFO filter_scoreboard.svh(84) @ 3262725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=746
+# Randomized packet: type=13, length=3122
+# Randomized packet: type=13, length=510
+# Randomized packet: type=13, length=4072
+# Randomized packet: type=13, length=2781
+# Randomized packet: type=4, length=3834
+# Randomized packet: type=12, length=203
+# Randomized packet: type=4, length=2521
+# Randomized packet: type=8, length=2532
+# Randomized packet: type=11, length=1679
+# Randomized packet: type=5, length=639
+# Randomized packet: type=10, length=1374
+# UVM_INFO filter_scoreboard.svh(84) @ 3392155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=2138
+# UVM_INFO filter_scoreboard.svh(84) @ 3406015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=3139
+# Randomized packet: type=2, length=2681
+# Randomized packet: type=8, length=186
+# Randomized packet: type=2, length=1503
+# Randomized packet: type=6, length=311
+# Randomized packet: type=9, length=2601
+# Randomized packet: type=7, length=3346
+# Randomized packet: type=7, length=2796
+# Randomized packet: type=12, length=1114
+# Randomized packet: type=13, length=3250
+# Randomized packet: type=1, length=3109
+# Randomized packet: type=5, length=860
+# Randomized packet: type=3, length=2535
+# UVM_INFO filter_scoreboard.svh(84) @ 3545375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1524
+# UVM_INFO filter_scoreboard.svh(84) @ 3570845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1353
+# Randomized packet: type=10, length=660
+# Randomized packet: type=11, length=2505
+# UVM_INFO filter_scoreboard.svh(84) @ 3592035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=2282
+# Randomized packet: type=15, length=3818
+# UVM_INFO filter_scoreboard.svh(84) @ 3626635 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1990
+# Randomized packet: type=7, length=3052
+# Randomized packet: type=3, length=3328
+# Randomized packet: type=10, length=4042
+# UVM_INFO filter_scoreboard.svh(84) @ 3704255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1763
+# UVM_INFO filter_scoreboard.svh(84) @ 3744175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1615
+# Randomized packet: type=15, length=1720
+# Randomized packet: type=7, length=3127
+# Randomized packet: type=14, length=3401
+# Randomized packet: type=11, length=50
+# Randomized packet: type=0, length=699
+# Randomized packet: type=7, length=1190
+# UVM_INFO filter_scoreboard.svh(84) @ 3809685 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=2924
+# Randomized packet: type=1, length=4023
+# Randomized packet: type=15, length=878
+# Randomized packet: type=15, length=2504
+# Randomized packet: type=14, length=399
+# Randomized packet: type=1, length=160
+# Randomized packet: type=2, length=2498
+# Randomized packet: type=8, length=2145
+# Randomized packet: type=2, length=2182
+# Randomized packet: type=0, length=4090
+# Randomized packet: type=6, length=1062
+# UVM_INFO filter_scoreboard.svh(84) @ 3945175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3877
+# Randomized packet: type=8, length=2111
+# UVM_INFO filter_scoreboard.svh(84) @ 3990055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1083
+# Randomized packet: type=2, length=2810
+# UVM_INFO filter_scoreboard.svh(84) @ 4011855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=1653
+# Randomized packet: type=11, length=3846
+# UVM_INFO filter_scoreboard.svh(84) @ 4042735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=974
+# Randomized packet: type=0, length=3518
+# Randomized packet: type=14, length=1384
+# UVM_INFO filter_scoreboard.svh(84) @ 4102075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1955
+# Randomized packet: type=0, length=3577
+# Randomized packet: type=7, length=361
+# Randomized packet: type=1, length=3357
+# UVM_INFO filter_scoreboard.svh(84) @ 4154485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1802
+# Randomized packet: type=10, length=3771
+# Randomized packet: type=11, length=3251
+# UVM_INFO filter_scoreboard.svh(84) @ 4220325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=2083
+# Randomized packet: type=3, length=1226
+# Randomized packet: type=4, length=3624
+# UVM_INFO filter_scoreboard.svh(84) @ 4259795 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=3377
+# Randomized packet: type=6, length=3435
+# Randomized packet: type=14, length=3610
+# Randomized packet: type=12, length=1768
+# Randomized packet: type=6, length=2957
+# Randomized packet: type=5, length=2569
+# Randomized packet: type=3, length=245
+# Randomized packet: type=0, length=862
+# UVM_INFO filter_scoreboard.svh(84) @ 4379115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 4381625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=3754
+# UVM_INFO filter_scoreboard.svh(84) @ 4389895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1382
+# Randomized packet: type=6, length=2369
+# Randomized packet: type=11, length=2132
+# Randomized packet: type=5, length=619
+# Randomized packet: type=6, length=1374
+# UVM_INFO filter_scoreboard.svh(84) @ 4444155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=2932
+# Randomized packet: type=4, length=2756
+# Randomized packet: type=7, length=239
+# Randomized packet: type=3, length=933
+# Randomized packet: type=6, length=907
+# UVM_INFO filter_scoreboard.svh(84) @ 4489615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=1574
+# Randomized packet: type=12, length=101
+# Randomized packet: type=10, length=25
+# Randomized packet: type=15, length=2806
+# UVM_INFO filter_scoreboard.svh(84) @ 4502835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=3010
+# Randomized packet: type=4, length=2192
+# Randomized packet: type=6, length=2363
+# Randomized packet: type=6, length=2588
+# Randomized packet: type=0, length=3327
+# Randomized packet: type=12, length=2998
+# UVM_INFO filter_scoreboard.svh(84) @ 4601155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=3409
+# Randomized packet: type=3, length=3330
+# Randomized packet: type=5, length=2746
+# UVM_INFO filter_scoreboard.svh(84) @ 4667035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=1137
+# UVM_INFO filter_scoreboard.svh(84) @ 4694945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1741
+# UVM_INFO filter_scoreboard.svh(84) @ 4706265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1391
+# UVM_INFO filter_scoreboard.svh(84) @ 4723355 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=2112
+# Randomized packet: type=9, length=2323
+# Randomized packet: type=7, length=1227
+# Randomized packet: type=12, length=2654
+# Randomized packet: type=9, length=3015
+# Randomized packet: type=1, length=3828
+# Randomized packet: type=12, length=2664
+# Randomized packet: type=14, length=2136
+# Randomized packet: type=12, length=1918
+# Randomized packet: type=5, length=2209
+# Randomized packet: type=9, length=2407
+# UVM_INFO filter_scoreboard.svh(84) @ 4861715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=1385
+# Randomized packet: type=0, length=609
+# Randomized packet: type=3, length=122
+# Randomized packet: type=5, length=2618
+# UVM_INFO filter_scoreboard.svh(84) @ 4887195 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 4888285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1079
+# UVM_INFO filter_scoreboard.svh(84) @ 4915115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=3247
+# Randomized packet: type=2, length=219
+# Randomized packet: type=11, length=3043
+# Randomized packet: type=2, length=2481
+# Randomized packet: type=11, length=2081
+# Randomized packet: type=8, length=1190
+# Randomized packet: type=9, length=1464
+# Randomized packet: type=6, length=625
+# Randomized packet: type=8, length=2227
+# Randomized packet: type=10, length=1257
+# Randomized packet: type=1, length=1980
+# UVM_INFO filter_scoreboard.svh(84) @ 5016145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=1228
+# Randomized packet: type=0, length=1353
+# Randomized packet: type=7, length=3879
+# UVM_INFO filter_scoreboard.svh(84) @ 5044965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=3041
+# Randomized packet: type=6, length=580
+# Randomized packet: type=11, length=31
+# Randomized packet: type=8, length=1329
+# Randomized packet: type=7, length=2817
+# Randomized packet: type=7, length=866
+# Randomized packet: type=0, length=547
+# Randomized packet: type=1, length=1450
+# UVM_INFO filter_scoreboard.svh(84) @ 5113735 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1697
+# Randomized packet: type=6, length=481
+# Randomized packet: type=7, length=2012
+# UVM_INFO filter_scoreboard.svh(84) @ 5138665 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1126
+# Randomized packet: type=6, length=3684
+# UVM_INFO filter_scoreboard.svh(84) @ 5162265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=2931
+# Randomized packet: type=3, length=3881
+# Randomized packet: type=0, length=1550
+# UVM_INFO filter_scoreboard.svh(84) @ 5232595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=2344
+# UVM_INFO filter_scoreboard.svh(84) @ 5248045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=397
+# Randomized packet: type=2, length=771
+# UVM_INFO filter_scoreboard.svh(84) @ 5263895 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=917
+# Randomized packet: type=1, length=3307
+# Randomized packet: type=9, length=1856
+# Randomized packet: type=1, length=440
+# Randomized packet: type=15, length=3648
+# Randomized packet: type=7, length=1833
+# Randomized packet: type=8, length=1225
+# Randomized packet: type=15, length=679
+# Randomized packet: type=9, length=336
+# Randomized packet: type=4, length=430
+# Randomized packet: type=8, length=837
+# Randomized packet: type=14, length=2776
+# Randomized packet: type=2, length=385
+# Randomized packet: type=12, length=2701
+# Randomized packet: type=0, length=3494
+# Randomized packet: type=11, length=3930
+# UVM_INFO filter_scoreboard.svh(84) @ 5410445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=421
+# Randomized packet: type=3, length=2389
+# Randomized packet: type=14, length=3052
+# UVM_INFO filter_scoreboard.svh(84) @ 5455625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=507
+# Randomized packet: type=15, length=2432
+# UVM_INFO filter_scoreboard.svh(84) @ 5476005 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=319
+# Randomized packet: type=0, length=2129
+# Randomized packet: type=3, length=3860
+# UVM_INFO filter_scoreboard.svh(84) @ 5511465 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=380
+# Randomized packet: type=2, length=4075
+# UVM_INFO filter_scoreboard.svh(84) @ 5551315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=1466
+# Randomized packet: type=8, length=1554
+# Randomized packet: type=13, length=1135
+# Randomized packet: type=12, length=1788
+# Randomized packet: type=13, length=422
+# Randomized packet: type=8, length=2758
+# Randomized packet: type=0, length=1551
+# Randomized packet: type=1, length=1904
+# UVM_INFO filter_scoreboard.svh(84) @ 5634855 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1830
+# Randomized packet: type=14, length=1311
+# Randomized packet: type=12, length=3757
+# Randomized packet: type=15, length=3078
+# Randomized packet: type=12, length=1536
+# Randomized packet: type=11, length=1059
+# Randomized packet: type=1, length=3314
+# Randomized packet: type=12, length=781
+# Randomized packet: type=5, length=3093
+# Randomized packet: type=10, length=4062
+# UVM_INFO filter_scoreboard.svh(84) @ 5759165 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1714
+# UVM_INFO filter_scoreboard.svh(84) @ 5799675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=3568
+# Randomized packet: type=10, length=637
+# UVM_INFO filter_scoreboard.svh(84) @ 5844495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=3750
+# UVM_INFO filter_scoreboard.svh(84) @ 5850945 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=375
+# Randomized packet: type=5, length=3864
+# Randomized packet: type=1, length=1144
+# UVM_INFO filter_scoreboard.svh(84) @ 5910325 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1784
+# Randomized packet: type=4, length=1160
+# Randomized packet: type=11, length=2827
+# Randomized packet: type=13, length=90
+# Randomized packet: type=14, length=1831
+# Randomized packet: type=6, length=3544
+# Randomized packet: type=12, length=3756
+# Randomized packet: type=0, length=1887
+# Randomized packet: type=13, length=684
+# UVM_INFO filter_scoreboard.svh(84) @ 6011075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=1748
+# Randomized packet: type=0, length=1269
+# UVM_INFO filter_scoreboard.svh(84) @ 6033185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1692
+# UVM_INFO filter_scoreboard.svh(84) @ 6045955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=3345
+# Randomized packet: type=1, length=3693
+# Randomized packet: type=14, length=269
+# Randomized packet: type=10, length=3164
+# Randomized packet: type=8, length=174
+# Randomized packet: type=2, length=604
+# UVM_INFO filter_scoreboard.svh(84) @ 6123045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1731
+# Randomized packet: type=3, length=2047
+# Randomized packet: type=10, length=3009
+# UVM_INFO filter_scoreboard.svh(84) @ 6156215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=1210
+# UVM_INFO filter_scoreboard.svh(84) @ 6186935 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=2443
+# Randomized packet: type=8, length=3382
+# Randomized packet: type=4, length=2051
+# Randomized packet: type=0, length=1508
+# Randomized packet: type=4, length=3119
+# UVM_INFO filter_scoreboard.svh(84) @ 6248015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1579
+# Randomized packet: type=12, length=2239
+# Randomized packet: type=9, length=3038
+# Randomized packet: type=0, length=213
+# Randomized packet: type=5, length=1399
+# UVM_INFO filter_scoreboard.svh(84) @ 6300095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=3222
+# UVM_INFO filter_scoreboard.svh(84) @ 6313975 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3787
+# Randomized packet: type=12, length=2030
+# UVM_INFO filter_scoreboard.svh(84) @ 6368335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=410
+# Randomized packet: type=9, length=3802
+# Randomized packet: type=15, length=1438
+# Randomized packet: type=13, length=2618
+# Randomized packet: type=7, length=3694
+# Randomized packet: type=4, length=277
+# Randomized packet: type=7, length=2617
+# Randomized packet: type=0, length=3602
+# Randomized packet: type=0, length=3126
+# UVM_INFO filter_scoreboard.svh(84) @ 6489015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=575
+# UVM_INFO filter_scoreboard.svh(84) @ 6519955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=2056
+# Randomized packet: type=5, length=3488
+# Randomized packet: type=3, length=1124
+# UVM_INFO filter_scoreboard.svh(84) @ 6567995 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=2500
+# UVM_INFO filter_scoreboard.svh(84) @ 6579955 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=2904
+# Randomized packet: type=7, length=2041
+# Randomized packet: type=0, length=3472
+# Randomized packet: type=3, length=3946
+# UVM_INFO filter_scoreboard.svh(84) @ 6652595 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=2707
+# UVM_INFO filter_scoreboard.svh(84) @ 6692495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=2186
+# UVM_INFO filter_scoreboard.svh(84) @ 6719645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=1669
+# UVM_INFO filter_scoreboard.svh(84) @ 6741415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=2444
+# UVM_INFO filter_scoreboard.svh(84) @ 6758075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=250
+# Randomized packet: type=3, length=431
+# Randomized packet: type=0, length=3453
+# UVM_INFO filter_scoreboard.svh(84) @ 6776025 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=2460
+# UVM_INFO filter_scoreboard.svh(84) @ 6810885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=1484
+# Randomized packet: type=13, length=2043
+# Randomized packet: type=6, length=1386
+# Randomized packet: type=3, length=2179
+# Randomized packet: type=5, length=3212
+# UVM_INFO filter_scoreboard.svh(84) @ 6870415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=1893
+# UVM_INFO filter_scoreboard.svh(84) @ 6902035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1520
+# UVM_INFO filter_scoreboard.svh(84) @ 6921075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=550
+# UVM_INFO filter_scoreboard.svh(84) @ 6936115 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=2760
+# Randomized packet: type=13, length=3002
+# Randomized packet: type=7, length=3403
+# Randomized packet: type=6, length=2249
+# Randomized packet: type=1, length=4021
+# Randomized packet: type=2, length=721
+# Randomized packet: type=2, length=903
+# Randomized packet: type=13, length=3366
+# Randomized packet: type=13, length=314
+# Randomized packet: type=11, length=3683
+# Randomized packet: type=14, length=2225
+# Randomized packet: type=0, length=1248
+# Randomized packet: type=2, length=1999
+# UVM_INFO filter_scoreboard.svh(84) @ 7084625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=2570
+# Randomized packet: type=13, length=146
+# Randomized packet: type=4, length=1970
+# Randomized packet: type=5, length=927
+# Randomized packet: type=14, length=1544
+# UVM_INFO filter_scoreboard.svh(84) @ 7127215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=103
+# Randomized packet: type=6, length=3990
+# Randomized packet: type=11, length=3802
+# Randomized packet: type=8, length=1819
+# Randomized packet: type=13, length=3613
+# Randomized packet: type=0, length=2807
+# Randomized packet: type=8, length=3962
+# UVM_INFO filter_scoreboard.svh(84) @ 7229705 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=3285
+# Randomized packet: type=0, length=810
+# Randomized packet: type=4, length=1932
+# UVM_INFO filter_scoreboard.svh(84) @ 7273625 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=567
+# Randomized packet: type=12, length=1974
+# UVM_INFO filter_scoreboard.svh(84) @ 7288865 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=3613
+# Randomized packet: type=15, length=1241
+# Randomized packet: type=0, length=847
+# Randomized packet: type=14, length=3227
+# UVM_INFO filter_scoreboard.svh(84) @ 7332315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1924
+# Randomized packet: type=10, length=3049
+# UVM_INFO filter_scoreboard.svh(84) @ 7367575 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=1055
+# UVM_INFO filter_scoreboard.svh(84) @ 7397985 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1500
+# UVM_INFO filter_scoreboard.svh(84) @ 7408405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=286
+# Randomized packet: type=4, length=431
+# Randomized packet: type=0, length=3635
+# Randomized packet: type=7, length=749
+# UVM_INFO filter_scoreboard.svh(84) @ 7456545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=2012
+# Randomized packet: type=14, length=3043
+# Randomized packet: type=6, length=850
+# Randomized packet: type=9, length=199
+# Randomized packet: type=7, length=499
+# Randomized packet: type=12, length=356
+# Randomized packet: type=2, length=3062
+# Randomized packet: type=5, length=2810
+# Randomized packet: type=1, length=247
+# Randomized packet: type=1, length=1626
+# UVM_INFO filter_scoreboard.svh(84) @ 7538075 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=806
+# Randomized packet: type=5, length=2560
+# Randomized packet: type=11, length=3298
+# UVM_INFO filter_scoreboard.svh(84) @ 7577095 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1105
+# Randomized packet: type=4, length=2210
+# Randomized packet: type=1, length=3628
+# Randomized packet: type=7, length=1014
+# Randomized packet: type=8, length=3997
+# Randomized packet: type=5, length=238
+# Randomized packet: type=8, length=2518
+# UVM_INFO filter_scoreboard.svh(84) @ 7655715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=3154
+# Randomized packet: type=5, length=2060
+# Randomized packet: type=13, length=3946
+# UVM_INFO filter_scoreboard.svh(84) @ 7705285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1219
+# Randomized packet: type=13, length=1333
+# Randomized packet: type=15, length=1238
+# Randomized packet: type=8, length=269
+# Randomized packet: type=13, length=3746
+# Randomized packet: type=9, length=3274
+# Randomized packet: type=4, length=2174
+# Randomized packet: type=4, length=4088
+# Randomized packet: type=2, length=61
+# Randomized packet: type=8, length=4041
+# Randomized packet: type=11, length=988
+# Randomized packet: type=12, length=1880
+# Randomized packet: type=12, length=1472
+# Randomized packet: type=5, length=852
+# Randomized packet: type=1, length=2951
+# UVM_INFO filter_scoreboard.svh(84) @ 7862505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=789
+# Randomized packet: type=4, length=575
+# Randomized packet: type=1, length=1470
+# Randomized packet: type=3, length=3417
+# Randomized packet: type=14, length=2405
+# UVM_INFO filter_scoreboard.svh(84) @ 7926925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=2089
+# Randomized packet: type=14, length=1524
+# Randomized packet: type=7, length=3989
+# Randomized packet: type=4, length=3561
+# Randomized packet: type=9, length=216
+# Randomized packet: type=12, length=1064
+# Randomized packet: type=10, length=820
+# Randomized packet: type=5, length=3307
+# UVM_INFO filter_scoreboard.svh(84) @ 8009805 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=3271
+# UVM_INFO filter_scoreboard.svh(84) @ 8042055 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=2820
+# Randomized packet: type=12, length=694
+# Randomized packet: type=5, length=3879
+# Randomized packet: type=4, length=1846
+# UVM_INFO filter_scoreboard.svh(84) @ 8115525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3899
+# Randomized packet: type=10, length=1320
+# UVM_INFO filter_scoreboard.svh(84) @ 8163265 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1179
+# UVM_INFO filter_scoreboard.svh(84) @ 8177045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=3109
+# Randomized packet: type=8, length=3395
+# Randomized packet: type=0, length=1653
+# Randomized packet: type=13, length=12
+# Randomized packet: type=2, length=3115
+# UVM_INFO filter_scoreboard.svh(84) @ 8231775 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=1158
+# Randomized packet: type=4, length=555
+# Randomized packet: type=5, length=1682
+# Randomized packet: type=2, length=765
+# UVM_INFO filter_scoreboard.svh(84) @ 8273225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=4050
+# Randomized packet: type=9, length=3990
+# Randomized packet: type=6, length=389
+# Randomized packet: type=9, length=2864
+# Randomized packet: type=4, length=2349
+# Randomized packet: type=11, length=3724
+# Randomized packet: type=11, length=3770
+# Randomized packet: type=2, length=3037
+# Randomized packet: type=1, length=1148
+# Randomized packet: type=10, length=2876
+# Randomized packet: type=13, length=1732
+# UVM_INFO filter_scoreboard.svh(84) @ 8431915 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=1943
+# Randomized packet: type=6, length=1396
+# UVM_INFO filter_scoreboard.svh(84) @ 8460225 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=2914
+# Randomized packet: type=4, length=1005
+# Randomized packet: type=14, length=3450
+# Randomized packet: type=5, length=2328
+# Randomized packet: type=7, length=1624
+# UVM_INFO filter_scoreboard.svh(84) @ 8527745 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=305
+# Randomized packet: type=10, length=3303
+# Randomized packet: type=0, length=1651
+# UVM_INFO filter_scoreboard.svh(84) @ 8570555 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=710
+# UVM_INFO filter_scoreboard.svh(84) @ 8587275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=122
+# Randomized packet: type=12, length=359
+# Randomized packet: type=3, length=3627
+# Randomized packet: type=15, length=1363
+# UVM_INFO filter_scoreboard.svh(84) @ 8629345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=561
+# Randomized packet: type=14, length=1521
+# Randomized packet: type=4, length=3511
+# Randomized packet: type=4, length=474
+# Randomized packet: type=14, length=4090
+# Randomized packet: type=8, length=3340
+# Randomized packet: type=11, length=1757
+# Randomized packet: type=2, length=2443
+# Randomized packet: type=0, length=2776
+# Randomized packet: type=14, length=2124
+# UVM_INFO filter_scoreboard.svh(84) @ 8752295 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=2760
+# Randomized packet: type=15, length=1428
+# Randomized packet: type=12, length=2600
+# Randomized packet: type=7, length=121
+# Randomized packet: type=0, length=3962
+# Randomized packet: type=3, length=333
+# Randomized packet: type=13, length=2955
+# UVM_INFO filter_scoreboard.svh(84) @ 8836925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 8840245 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3758
+# Randomized packet: type=1, length=3439
+# UVM_INFO filter_scoreboard.svh(84) @ 8892485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=937
+# Randomized packet: type=14, length=585
+# Randomized packet: type=0, length=3381
+# Randomized packet: type=0, length=2811
+# UVM_INFO filter_scoreboard.svh(84) @ 8951375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1955
+# UVM_INFO filter_scoreboard.svh(84) @ 8979765 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=3265
+# Randomized packet: type=7, length=3572
+# Randomized packet: type=12, length=1371
+# Randomized packet: type=7, length=3112
+# Randomized packet: type=3, length=177
+# Randomized packet: type=7, length=3367
+# UVM_INFO filter_scoreboard.svh(84) @ 9047885 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=177
+# Randomized packet: type=11, length=2674
+# Randomized packet: type=9, length=1141
+# Randomized packet: type=1, length=1959
+# Randomized packet: type=6, length=2601
+# Randomized packet: type=6, length=937
+# Randomized packet: type=8, length=2607
+# Randomized packet: type=5, length=161
+# Randomized packet: type=4, length=1889
+# UVM_INFO filter_scoreboard.svh(84) @ 9126965 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=3749
+# Randomized packet: type=2, length=4048
+# Randomized packet: type=13, length=859
+# Randomized packet: type=10, length=1722
+# Randomized packet: type=15, length=2681
+# UVM_INFO filter_scoreboard.svh(84) @ 9197375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3344
+# Randomized packet: type=14, length=3509
+# UVM_INFO filter_scoreboard.svh(84) @ 9243725 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=3776
+# Randomized packet: type=15, length=3378
+# Randomized packet: type=10, length=336
+# Randomized packet: type=4, length=1935
+# UVM_INFO filter_scoreboard.svh(84) @ 9300675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=1744
+# Randomized packet: type=7, length=2677
+# UVM_INFO filter_scoreboard.svh(84) @ 9327305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3539
+# Randomized packet: type=10, length=2405
+# Randomized packet: type=6, length=594
+# UVM_INFO filter_scoreboard.svh(84) @ 9381565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=2525
+# Randomized packet: type=3, length=3084
+# UVM_INFO filter_scoreboard.svh(84) @ 9409715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=2600
+# UVM_INFO filter_scoreboard.svh(84) @ 9440345 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=1839
+# Randomized packet: type=13, length=999
+# UVM_INFO filter_scoreboard.svh(84) @ 9471435 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=3772
+# Randomized packet: type=8, length=175
+# Randomized packet: type=0, length=2665
+# UVM_INFO filter_scoreboard.svh(84) @ 9513835 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=964
+# UVM_INFO filter_scoreboard.svh(84) @ 9542255 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=2862
+# Randomized packet: type=6, length=822
+# Randomized packet: type=11, length=3612
+# Randomized packet: type=10, length=489
+# Randomized packet: type=15, length=2488
+# UVM_INFO filter_scoreboard.svh(84) @ 9588445 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=1190
+# Randomized packet: type=9, length=915
+# Randomized packet: type=8, length=2086
+# Randomized packet: type=3, length=2962
+# Randomized packet: type=10, length=1609
+# UVM_INFO filter_scoreboard.svh(84) @ 9652015 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=2790
+# UVM_INFO filter_scoreboard.svh(84) @ 9668405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=1315
+# Randomized packet: type=5, length=1513
+# Randomized packet: type=10, length=1196
+# UVM_INFO filter_scoreboard.svh(84) @ 9704215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=610
+# UVM_INFO filter_scoreboard.svh(84) @ 9716375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=2692
+# Randomized packet: type=1, length=1809
+# Randomized packet: type=6, length=2032
+# Randomized packet: type=2, length=4017
+# Randomized packet: type=5, length=380
+# Randomized packet: type=1, length=3504
+# UVM_INFO filter_scoreboard.svh(84) @ 9776045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=3944
+# Randomized packet: type=5, length=639
+# UVM_INFO filter_scoreboard.svh(84) @ 9834715 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=4082
+# UVM_INFO filter_scoreboard.svh(84) @ 9841035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=9
+# Randomized packet: type=2, length=974
+# UVM_INFO filter_scoreboard.svh(84) @ 9881415 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=3610
+# Randomized packet: type=4, length=366
+# Randomized packet: type=8, length=1534
+# UVM_INFO filter_scoreboard.svh(84) @ 9923205 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=3314
+# Randomized packet: type=15, length=467
+# Randomized packet: type=12, length=3110
+# Randomized packet: type=13, length=3020
+# Randomized packet: type=6, length=2099
+# Randomized packet: type=0, length=772
+# Randomized packet: type=4, length=2925
+# UVM_INFO filter_scoreboard.svh(84) @ 10000755 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=4010
+# Randomized packet: type=10, length=461
+# Randomized packet: type=2, length=3966
+# UVM_INFO filter_scoreboard.svh(84) @ 10040525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=4019
+# Randomized packet: type=14, length=1817
+# Randomized packet: type=9, length=1847
+# Randomized packet: type=5, length=2426
+# Randomized packet: type=15, length=1974
+# UVM_INFO filter_scoreboard.svh(84) @ 10123485 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1715
+# Randomized packet: type=12, length=142
+# Randomized packet: type=11, length=1703
+# Randomized packet: type=6, length=3055
+# Randomized packet: type=3, length=1202
+# Randomized packet: type=10, length=3841
+# UVM_INFO filter_scoreboard.svh(84) @ 10178045 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=957
+# UVM_INFO filter_scoreboard.svh(84) @ 10216525 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=1831
+# Randomized packet: type=2, length=600
+# Randomized packet: type=8, length=3057
+# Randomized packet: type=3, length=2355
+# Randomized packet: type=7, length=2067
+# UVM_INFO filter_scoreboard.svh(84) @ 10273305 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=237
+# Randomized packet: type=12, length=3836
+# Randomized packet: type=14, length=1634
+# Randomized packet: type=9, length=2441
+# Randomized packet: type=8, length=1297
+# Randomized packet: type=11, length=1222
+# Randomized packet: type=11, length=2537
+# Randomized packet: type=6, length=1244
+# Randomized packet: type=3, length=3378
+# Randomized packet: type=14, length=1850
+# UVM_INFO filter_scoreboard.svh(84) @ 10389375 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1870
+# Randomized packet: type=5, length=2205
+# Randomized packet: type=13, length=2215
+# UVM_INFO filter_scoreboard.svh(84) @ 10430175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1169
+# Randomized packet: type=12, length=1978
+# Randomized packet: type=15, length=899
+# Randomized packet: type=2, length=2800
+# Randomized packet: type=12, length=2174
+# Randomized packet: type=2, length=2235
+# Randomized packet: type=9, length=1482
+# Randomized packet: type=11, length=3646
+# Randomized packet: type=8, length=1762
+# Randomized packet: type=8, length=2530
+# Randomized packet: type=8, length=1951
+# Randomized packet: type=15, length=632
+# Randomized packet: type=5, length=2227
+# Randomized packet: type=8, length=1402
+# UVM_INFO filter_scoreboard.svh(84) @ 10579875 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=2166
+# Randomized packet: type=8, length=3699
+# UVM_INFO filter_scoreboard.svh(84) @ 10609215 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=3948
+# Randomized packet: type=1, length=3322
+# Randomized packet: type=0, length=404
+# Randomized packet: type=8, length=258
+# Randomized packet: type=4, length=3378
+# UVM_INFO filter_scoreboard.svh(84) @ 10667825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=637
+# Randomized packet: type=15, length=1355
+# Randomized packet: type=15, length=2884
+# Randomized packet: type=1, length=3393
+# Randomized packet: type=2, length=2439
+# Randomized packet: type=6, length=4011
+# Randomized packet: type=6, length=3318
+# Randomized packet: type=2, length=3337
+# Randomized packet: type=6, length=3041
+# Randomized packet: type=8, length=21
+# Randomized packet: type=12, length=3677
+# Randomized packet: type=15, length=3071
+# Randomized packet: type=9, length=1624
+# Randomized packet: type=11, length=3162
+# Randomized packet: type=10, length=1887
+# Randomized packet: type=9, length=3597
+# UVM_INFO filter_scoreboard.svh(84) @ 10885335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=901
+# Randomized packet: type=3, length=1209
+# Randomized packet: type=9, length=1145
+# UVM_INFO filter_scoreboard.svh(84) @ 10919785 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=9, length=1231
+# Randomized packet: type=0, length=3556
+# Randomized packet: type=12, length=897
+# UVM_INFO filter_scoreboard.svh(84) @ 10967405 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=4022
+# Randomized packet: type=14, length=3549
+# Randomized packet: type=13, length=3048
+# Randomized packet: type=6, length=1498
+# Randomized packet: type=6, length=941
+# Randomized packet: type=7, length=134
+# Randomized packet: type=1, length=3338
+# Randomized packet: type=3, length=1364
+# Randomized packet: type=4, length=3336
+# UVM_INFO filter_scoreboard.svh(84) @ 11068675 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=3, length=2841
+# Randomized packet: type=9, length=3536
+# UVM_INFO filter_scoreboard.svh(84) @ 11113585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=15, length=2002
+# Randomized packet: type=1, length=389
+# Randomized packet: type=10, length=2922
+# Randomized packet: type=14, length=561
+# UVM_INFO filter_scoreboard.svh(84) @ 11172825 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=3681
+# Randomized packet: type=15, length=510
+# UVM_INFO filter_scoreboard.svh(84) @ 11212845 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=1, length=390
+# Randomized packet: type=2, length=3501
+# Randomized packet: type=7, length=3340
+# Randomized packet: type=9, length=1287
+# Randomized packet: type=1, length=2318
+# Randomized packet: type=9, length=1752
+# Randomized packet: type=15, length=3393
+# Randomized packet: type=14, length=3014
+# Randomized packet: type=15, length=3779
+# Randomized packet: type=11, length=3175
+# Randomized packet: type=14, length=1439
+# Randomized packet: type=2, length=1684
+# Randomized packet: type=0, length=2734
+# Randomized packet: type=7, length=1789
+# UVM_INFO filter_scoreboard.svh(84) @ 11388615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1759
+# Randomized packet: type=12, length=2823
+# Randomized packet: type=2, length=2621
+# Randomized packet: type=4, length=608
+# Randomized packet: type=5, length=2474
+# Randomized packet: type=4, length=1147
+# UVM_INFO filter_scoreboard.svh(84) @ 11462505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=3348
+# Randomized packet: type=9, length=2792
+# UVM_INFO filter_scoreboard.svh(84) @ 11501145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=2986
+# Randomized packet: type=13, length=496
+# Randomized packet: type=7, length=3787
+# Randomized packet: type=13, length=305
+# Randomized packet: type=12, length=2871
+# Randomized packet: type=13, length=1528
+# Randomized packet: type=15, length=857
+# Randomized packet: type=15, length=891
+# Randomized packet: type=5, length=1642
+# Randomized packet: type=9, length=4015
+# UVM_INFO filter_scoreboard.svh(84) @ 11599285 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=2, length=748
+# Randomized packet: type=4, length=3310
+# Randomized packet: type=11, length=2118
+# Randomized packet: type=8, length=2417
+# Randomized packet: type=5, length=1762
+# Randomized packet: type=4, length=59
+# Randomized packet: type=4, length=533
+# UVM_INFO filter_scoreboard.svh(84) @ 11680495 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=1526
+# Randomized packet: type=12, length=568
+# Randomized packet: type=8, length=2197
+# Randomized packet: type=5, length=919
+# Randomized packet: type=11, length=109
+# Randomized packet: type=15, length=3397
+# UVM_INFO filter_scoreboard.svh(84) @ 11713925 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1942
+# Randomized packet: type=9, length=2579
+# Randomized packet: type=9, length=110
+# Randomized packet: type=15, length=2914
+# Randomized packet: type=12, length=3265
+# Randomized packet: type=11, length=1673
+# Randomized packet: type=3, length=992
+# Randomized packet: type=6, length=2172
+# UVM_INFO filter_scoreboard.svh(84) @ 11803615 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=359
+# Randomized packet: type=7, length=3403
+# Randomized packet: type=2, length=1162
+# Randomized packet: type=10, length=3026
+# Randomized packet: type=6, length=1703
+# UVM_INFO filter_scoreboard.svh(84) @ 11869185 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=661
+# Randomized packet: type=5, length=830
+# UVM_INFO filter_scoreboard.svh(84) @ 11884035 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=331
+# Randomized packet: type=0, length=858
+# UVM_INFO filter_scoreboard.svh(84) @ 11892315 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 11895515 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=5, length=3291
+# UVM_INFO filter_scoreboard.svh(84) @ 11904645 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1332
+# UVM_INFO filter_scoreboard.svh(84) @ 11936905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=366
+# Randomized packet: type=5, length=2650
+# Randomized packet: type=2, length=3029
+# UVM_INFO filter_scoreboard.svh(84) @ 11972545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=14, length=1231
+# Randomized packet: type=9, length=2750
+# Randomized packet: type=8, length=3812
+# Randomized packet: type=2, length=409
+# Randomized packet: type=11, length=579
+# Randomized packet: type=11, length=788
+# Randomized packet: type=7, length=2170
+# Randomized packet: type=15, length=382
+# Randomized packet: type=9, length=4083
+# Randomized packet: type=10, length=136
+# Randomized packet: type=1, length=1745
+# UVM_INFO filter_scoreboard.svh(84) @ 12070535 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=8, length=1360
+# Randomized packet: type=15, length=162
+# Randomized packet: type=14, length=1214
+# Randomized packet: type=13, length=3435
+# Randomized packet: type=7, length=452
+# Randomized packet: type=5, length=1741
+# Randomized packet: type=7, length=1509
+# UVM_INFO filter_scoreboard.svh(84) @ 12130155 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=6, length=1508
+# Randomized packet: type=4, length=1491
+# Randomized packet: type=9, length=3734
+# Randomized packet: type=6, length=3622
+# Randomized packet: type=0, length=1073
+# Randomized packet: type=10, length=1814
+# UVM_INFO filter_scoreboard.svh(84) @ 12201175 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=10, length=3182
+# UVM_INFO filter_scoreboard.svh(84) @ 12220425 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=137
+# Randomized packet: type=4, length=2555
+# UVM_INFO filter_scoreboard.svh(84) @ 12251335 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# UVM_INFO filter_scoreboard.svh(84) @ 12252695 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=1570
+# Randomized packet: type=5, length=882
+# Randomized packet: type=8, length=2540
+# UVM_INFO filter_scoreboard.svh(84) @ 12282275 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=4, length=3283
+# Randomized packet: type=8, length=2721
+# Randomized packet: type=2, length=1063
+# Randomized packet: type=7, length=110
+# Randomized packet: type=2, length=3159
+# Randomized packet: type=0, length=1085
+# Randomized packet: type=0, length=2481
+# UVM_INFO filter_scoreboard.svh(84) @ 12356905 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=11, length=2465
+# UVM_INFO filter_scoreboard.svh(84) @ 12381565 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=1642
+# Randomized packet: type=5, length=228
+# Randomized packet: type=15, length=2576
+# UVM_INFO filter_scoreboard.svh(84) @ 12404505 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=7, length=982
+# Randomized packet: type=12, length=2156
+# Randomized packet: type=8, length=2886
+# Randomized packet: type=2, length=1844
+# Randomized packet: type=6, length=3801
+# Randomized packet: type=14, length=2185
+# Randomized packet: type=8, length=2252
+# Randomized packet: type=4, length=2361
+# Randomized packet: type=1, length=1225
+# Randomized packet: type=11, length=452
+# Randomized packet: type=8, length=2174
+# Randomized packet: type=0, length=123
+# Randomized packet: type=8, length=1613
+# UVM_INFO filter_scoreboard.svh(84) @ 12530585 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=0, length=3300
+# Randomized packet: type=1, length=2838
+# UVM_INFO filter_scoreboard.svh(84) @ 12572145 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=12, length=638
+# Randomized packet: type=11, length=3808
+# Randomized packet: type=4, length=650
+# Randomized packet: type=15, length=1040
+# Randomized packet: type=15, length=2612
+# Randomized packet: type=1, length=1292
+# Randomized packet: type=10, length=1468
+# Randomized packet: type=13, length=2731
+# UVM_INFO filter_scoreboard.svh(84) @ 12651545 ns: uvm_test_top.env.scoreboard [SCOREBOARD] Test passed.
+# Randomized packet: type=13, length=1801
+# Randomized packet: type=15, length=1673
+# Randomized packet: type=15, length=1742
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 12689825 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO filter_base_test.svh(47) @ 12689825 ns: uvm_test_top [filter_packet_test] ---------------------------
+# UVM_INFO filter_base_test.svh(48) @ 12689825 ns: uvm_test_top [filter_packet_test] ---     TEST PASSED     ---
+# UVM_INFO filter_base_test.svh(49) @ 12689825 ns: uvm_test_top [filter_packet_test] ---------------------------
+# === Coverage Summary ===
+# 
+# Input Packet Coverage: 100.00%
+#   Type Coverage: 100.00%
+#   Length Bin Coverage: 100.00%
+#   Length Even/Odd Coverage: 100.00%
+# Input Interface Coverage: 100.00%
+#   Valid Coverage: 100.00%
+#   Ready Coverage: 100.00%
+#   Backpressure Coverage: 100.00%
+# Output Interface Coverage: 100.00%
+#   Valid Coverage: 100.00%
+#   Ready Coverage: 100.00%
+#   Backpressure Coverage: 100.00%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  245
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]   238
+# [TEST_DONE]     1
+# [filter_packet_test]     3
+# ** Note: $finish    : /ecel/apps/reconfig/tools/siemens/questasim/2023.3/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 12689825 ns  Iteration: 54  Instance: /filter_tb
+# End time: 18:29:16 on Apr 15,2025, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 0
