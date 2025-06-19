@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue Apr 15 22:55:53 2025
+# Process ID: 92146
+# Current directory: /ecel/UFAD/sr.yellanki/lab4-gg/part3
+# Command line: vivado
+# Log file: /ecel/UFAD/sr.yellanki/lab4-gg/part3/vivado.log
+# Journal file: /ecel/UFAD/sr.yellanki/lab4-gg/part3/vivado.jou
+# Running On: ece-lnx-01, OS: Linux, CPU Frequency: 2000.000 MHz, CPU Physical cores: 32, Host memory: 540639 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /ecel/UFAD/sr.yellanki/lab4-gg/part3/project_1 -part xc7a12tcpg238-2L
+add_files -norecurse {/ecel/UFAD/sr.yellanki/lab4-gg/part3/filter.sv /ecel/UFAD/sr.yellanki/lab4-gg/part3/fifo.sv}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
